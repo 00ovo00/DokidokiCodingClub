@@ -30,16 +30,16 @@ public class UIManager : SingletonBase<UIManager>
         ShowDialogue();
     }
 
-    public void ShowDialogue()
+    public void ShowDialogue() // 
     {
         DialogueData data = _dataManager.dialogues[curID];
-        if (data.IsOption)
+        if (data.IsOption) // IsOption이 1이라면 
         {
             dialogUI.SetActive(false);
             optionUI.SetActive(true);
 
-            questionTxt.text = data.Question;
-            optionAButton.GetComponentInChildren<TextMeshProUGUI>().text = data.OptionA;
+            questionTxt.text = data.Question; // 질문 출력 
+            optionAButton.GetComponentInChildren<TextMeshProUGUI>().text = data.OptionA; 
             optionBButton.GetComponentInChildren<TextMeshProUGUI>().text = data.OptionB;
             optionCButton.GetComponentInChildren<TextMeshProUGUI>().text = data.OptionC;
 
@@ -51,7 +51,7 @@ public class UIManager : SingletonBase<UIManager>
             optionBButton.onClick.AddListener(() => SelectOption(data.Result2, 2));
             optionCButton.onClick.AddListener(() => SelectOption(data.Result3, 3));
         }
-        else
+        else // 옵션이 0이라면 대화 출력
         {
             dialogUI.SetActive(true);
             optionUI.SetActive(false);
@@ -73,7 +73,7 @@ public class UIManager : SingletonBase<UIManager>
                 UnityEditor.EditorApplication.isPlaying = false;
             }
         }
-        curID++;
+        curID++; // 다음 줄 출력 
         ShowDialogue();
     }
 
