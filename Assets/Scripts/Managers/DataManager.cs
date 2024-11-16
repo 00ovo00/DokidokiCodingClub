@@ -3,28 +3,30 @@ using UnityEngine;
 
 public class DataManager : SingletonBase<DataManager>
 {
-    [SerializeField] private int score = 0;
+    [SerializeField] private int _score = 0;    // 호감도
+    // TODO: 공략 대상 데이터 만들어서 분리하기
 
     public int Score
     {
-        get { return score; }
-        set { score = value; }
+        get { return _score; }
+        set { _score = value; }
     }
 
-    public TextAsset csvFile;
-    public List<DialogueData> dialogues = new List<DialogueData>();
+    [SerializeField] private TextAsset _csvFile;   // 엑셀 시트에서 가져온 원본 데이터
+    public List<DialogueData> Dialogs = new List<DialogueData>();
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         LoadCSV();
     }
 
-    void LoadCSV()
+    private void LoadCSV()
     {
-        var lines = csvFile.text.Split('\n');
-        for (int i = 1; i < lines.Length; i++)
+        var lines = _csvFile.text.Split('\n');  // 엑셀 시트 행 분리
+        for (int i = 1; i < lines.Length; i++)  // 0행의 열 정보 제외
         {
-            var values = lines[i].Split(',');
+            var values = lines[i].Split(',');  // 엑셀 시트 열 분리
             if (values.Length >= 13)
             {
                 DialogueData data = new DialogueData
@@ -43,26 +45,8 @@ public class DataManager : SingletonBase<DataManager>
                     Result3 = int.Parse(values[11]),
                     NextDialogID = int.Parse(values[12])
                 };
-                dialogues.Add(data);
+                Dialogs.Add(data);
             }
         }
     }
-}
-
-[System.Serializable]
-public class DialogueData
-{
-    public int DialogID;
-    public int ID;
-    public string Speaker;
-    public string Line;
-    public bool IsOption;
-    public string Question;
-    public string OptionA;
-    public string OptionB;
-    public string OptionC;
-    public int Result1;
-    public int Result2;
-    public int Result3;
-    public int NextDialogID;
 }
