@@ -1,52 +1,67 @@
-using System.Collections.Generic;
-using UnityEngine;
+//using System.Collections.Generic;
+//using UnityEngine;
 
-public class DataManager : SingletonBase<DataManager>
-{
-    [SerializeField] private int _score = 0;    // í˜¸ê°ë„
-    // TODO: ê³µëµ ëŒ€ìƒ ë°ì´í„° ë§Œë“¤ì–´ì„œ ë¶„ë¦¬í•˜ê¸°
+//public class DataManager : SingletonBase<DataManager>
+//{
+//    // csv ÆÄÀÏ µ¥ÀÌÅÍ ºÒ·¯¿À±â. 
 
-    public int Score
-    {
-        get { return _score; }
-        set { _score = value; }
-    }
+//    [SerializeField] private int score = 0;
 
-    [SerializeField] private TextAsset _csvFile;   // ì—‘ì…€ ì‹œíŠ¸ì—ì„œ ê°€ì ¸ì˜¨ ì›ë³¸ ë°ì´í„°
-    public List<DialogueData> Dialogs = new List<DialogueData>();
+//    public int Score
+//    {
+//        get { return score; }
+//        set { score = value; }
+//    }
 
-    protected override void Awake()
-    {
-        base.Awake();
-        LoadCSV();
-    }
+//    public TextAsset csvFile;
+//    public List<DialogueData> dialogues = new List<DialogueData>();
 
-    private void LoadCSV()
-    {
-        var lines = _csvFile.text.Split('\n');  // ì—‘ì…€ ì‹œíŠ¸ í–‰ ë¶„ë¦¬
-        for (int i = 1; i < lines.Length; i++)  // 0í–‰ì˜ ì—´ ì •ë³´ ì œì™¸
-        {
-            var values = lines[i].Split(',');  // ì—‘ì…€ ì‹œíŠ¸ ì—´ ë¶„ë¦¬
-            if (values.Length >= 13)
-            {
-                DialogueData data = new DialogueData
-                {
-                    DialogID = int.Parse(values[0]),
-                    ID = int.Parse(values[1]),
-                    Speaker = values[2],
-                    Line = values[3],
-                    IsOption = int.Parse(values[4]) == 1,
-                    Question = values[5],
-                    OptionA = values[6],
-                    OptionB = values[7],
-                    OptionC = values[8],
-                    Result1 = int.Parse(values[9]),
-                    Result2 = int.Parse(values[10]),
-                    Result3 = int.Parse(values[11]),
-                    NextDialogID = int.Parse(values[12])
-                };
-                Dialogs.Add(data);
-            }
-        }
-    }
-}
+//    public void LoadCSV(string csvFile)
+//    {
+//        TextAsset _data = Resources.Load<TextAsset>(csvFile);
+//        var lines = _data.text.Split('\n'); // ÁÙ ´ÜÀ§·Î Àß¶ó¼­ ¹è¿­·Î ÀúÀå 
+
+//        for (int i = 1; i < lines.Length; i++) // ½°Ç¥·Î ±¸ºĞÇØ¼­ ¹è¿­·Î ÀúÀå 
+//        {
+//            var values = lines[i].Split(','); 
+//            if (values.Length >= 13) 
+//            {
+//                DialogueData data = new DialogueData
+//                {
+//                    DialogID = int.Parse(values[0]), // ´ëÈ­ ID
+//                    ID = int.Parse(values[1]), // ´ÙÀÌ¾î·Î±× ¾ÆÀÌµğ ³» ¹®Àå ¼ø¼­ 
+//                    Speaker = values[2], // ¹ßÈ­ÀÚ 
+//                    Line = values[3], // ³»¿ë 
+//                    IsOption = int.Parse(values[4]) == 1, // ºĞ±âÁ¡(¼±ÅÃÁö) 
+//                    Question = values[5], // Áú¹®
+//                    OptionA = values[6], // ¼±ÅÃÁö1
+//                    OptionB = values[7], // ¼±ÅÃÁö2
+//                    OptionC = values[8], // ¼±ÅÃÁö3
+//                    Result1 = int.Parse(values[9]), // È£°¨µµ °á°ú
+//                    Result2 = int.Parse(values[10]), // È£°¨µµ °á°ú 
+//                    Result3 = int.Parse(values[11]), // È£°¨µµ °á°ú
+//                    NextDialogID = int.Parse(values[12]) // ´ÙÀ½ ´ÙÀÌ¾î·Î±× ID
+//                };
+//                dialogues.Add(data); 
+//            }
+//        }
+//    }
+//}
+
+//[System.Serializable]
+//public class DialogueData
+//{
+//    public int DialogID;
+//    public int ID;
+//    public string Speaker;
+//    public string Line;
+//    public bool IsOption;
+//    public string Question;
+//    public string OptionA;
+//    public string OptionB;
+//    public string OptionC;
+//    public int Result1;
+//    public int Result2;
+//    public int Result3;
+//    public int NextDialogID;
+//}
