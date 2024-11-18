@@ -251,6 +251,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &546031829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546031831}
+  - component: {fileID: 546031830}
+  m_Layer: 0
+  m_Name: Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &546031830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546031829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0283f99407801cf439acd2c612b6d5d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+    dialogues:
+    - ID: 0
+      name: NPC
+      lines:
+      - "\uC548\uB155\uD558\uC138\uC694."
+      - "\uC624\uB298\uB3C4 \uC218\uACE0 \uB9CE\uC558\uC2B5\uB2C8\uB2E4."
+      isOption: 1
+      Question: "\uADF8\uB7F0\uB370 TIL\uC740 \uC791\uC131\uD558\uACE0 \uB180\uACE0
+        \uACC4\uC2E0\uAC70\uC8E0?"
+      Options:
+      - "\uC544\uB2C8\uC694."
+      - "\uB2F9\uC5F0\uD558\uC8E0 \u314B\u314B"
+      Results: f6ffffff05000000
+    - ID: 1
+      name: "\uD50C\uB808\uC774\uC5B4"
+      lines:
+      - "\uAC19\uC774 \uCE7C\uBC14\uB78C \uB370\uC774\uD2B8 \uD558\uC2E4\uB798\uC694\u314B\u314B? "
+      isOption: 0
+      Question: 
+      Options: []
+      Results: 
+  fileName: TestData
+--- !u!4 &546031831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546031829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &693467468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1509,10 @@ MonoBehaviour:
   optionCButton: {fileID: 1061030243240490141}
   scoreAlert: {fileID: 1463711591}
   scoreChangeTxt: {fileID: 838166008}
+  curDialogID: 0
+  curID: 0
+  _dataManager: {fileID: 0}
+  isResult: 0
 --- !u!114 &2102964393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,8 +1525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2f558d16bd1574598697b8f95030b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  csvFile: {fileID: 4900000, guid: 528649d418b56414aa621131c4469832, type: 3}
   dialogues: []
 --- !u!1 &2121116679
 GameObject:
@@ -1729,3 +1798,4 @@ SceneRoots:
   - {fileID: 1055596834}
   - {fileID: 1924856276}
   - {fileID: 2102964391}
+  - {fileID: 546031831}
