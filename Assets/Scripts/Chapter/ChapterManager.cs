@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChapterManager : MonoBehaviour
+public class ChapterManager : SingletonBase<ChapterManager>
 {
     public enum ChapterState
     {
@@ -16,8 +16,6 @@ public class ChapterManager : MonoBehaviour
         수료일
     }
 
-    private Dictionary<ChapterState, string> _chapterCSV;
-
     [SerializeField] private ChapterState _currentChapter;
     [SerializeField] private int _currentChapterIndex;
 
@@ -26,26 +24,27 @@ public class ChapterManager : MonoBehaviour
     public Action onExitChapter;
 
     public Dialogue[] dialogues;
-    public Dialogue[] GetDialogues()
-    {
-        return dialogues;
-    }
-
-    private void Start()
+ 
+    private void Awake() 
     {
         _currentChapterIndex = 0;
         EnterChapter(_currentChapterIndex);
     }
+
     private void EnterChapter(int chapterIndex)
     {
+        string fileName = $"Chapter {chapterIndex + 1}";
         _currentChapter = (ChapterState)chapterIndex;
-
-        // 챕터에 맞는 파일 이름 넣기 
-        DialogueData dialogueData = DataManager.Instance.Parse("TestData"); 
+        DialogueData dialogueData = DataManager.Instance.Parse(fileName); 
         if (dialogueData != null)
         {
             dialogues = dialogueData.dialogues;
         }
+        else
+        {
+            Debug.LogError("DialogueData가 null이거나 dialogues가 비어 있습니다.");
+        }
+
         onEnterChapter?.Invoke();
     }
     private void CurrentChapter()
