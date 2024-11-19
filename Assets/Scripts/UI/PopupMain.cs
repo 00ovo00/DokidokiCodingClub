@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class PopupMain : UIBase
 {
-    public void ShowPopup(int index)
+    public void Showpopup(int index)
     {
-        if(index == 0)
+        switch (index)
         {
-            UIManager.Instance.Show<WriteNameScene>();
-        }
-        else if (index == 1)
-        {
-
-        }
-        else if(index == 2)
-        {
-
-        }
-        else if(index == 3)
-        {
-
+            case 0:
+                UIManager.Instance.Show<PopupA>();
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
         }
     }
+
 }

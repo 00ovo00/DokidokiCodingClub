@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
         uiDictionary.Add(uiName, ui);
         ui.Opened(param);
 
-
+        Debug.Log(uiName);
         return (T)ui;
     }
 
@@ -72,11 +72,7 @@ public class UIManager : MonoBehaviour
         if (uiDictionary.TryGetValue(uiName, out UIBase go))
         {
             uiDictionary.Remove(uiName);
-            Destroy(go.canvas.gameObject);
-        }
-        else
-        {
-            Debug.LogWarning($"{uiName}가 현 uiDictionary에 없음..");
+            Destroy(go.gameObject);
         }
     }
 }
