@@ -163,8 +163,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc7ee556dd51ccc40a033c6ebfca3459, type: 2}
+  m_sharedMaterial: {fileID: 2029267831429084521, guid: fc7ee556dd51ccc40a033c6ebfca3459, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -390,68 +390,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 546031829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0283f99407801cf439acd2c612b6d5d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 48da36617de060c49bcc264a30b26593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData:
-    dialogues:
-    - ID: 0
-      name: 
-      lines: []
-      isOption: 0
-      Question: 
-      Options: []
-      Results: 
-    - ID: 0
-      name: 
-      lines: []
-      isOption: 0
-      Question: 
-      Options: []
-      Results: 
-    - ID: 0
-      name: 
-      lines: []
-      isOption: 0
-      Question: 
-      Options: []
-      Results: 
-    - ID: 0
-      name: 
-      lines: []
-      isOption: 0
-      Question: 
-      Options: []
-      Results: 
-    - ID: 0
-      name: 
-      lines: []
-      isOption: 0
-      Question: 
-      Options: []
-      Results: 
-    - ID: 0
-      name: 
-      lines: []
-      isOption: 0
-      Question: 
-      Options: []
-      Results: 
-    - ID: 0
-      name: 
-      lines: []
-      isOption: 0
-      Question: 
-      Options: []
-      Results: 
-    - ID: 0
-      name: 
-      lines: []
-      isOption: 0
-      Question: 
-      Options: []
-      Results: 
-  fileName: gffg
+  _currentChapter: 0
+  _currentChapterIndex: 0
+  dialogues: []
 --- !u!1 &934301005
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,8 +617,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc7ee556dd51ccc40a033c6ebfca3459, type: 2}
+  m_sharedMaterial: {fileID: 2029267831429084521, guid: fc7ee556dd51ccc40a033c6ebfca3459, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1160,6 +1104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23432ec2c65bc7c4f8f8aef6c80f2def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chapterManager: {fileID: 0}
   nameTxt: {fileID: 186354760}
   lineTxt: {fileID: 1103140436}
   nextButton: {fileID: 1203705395}
