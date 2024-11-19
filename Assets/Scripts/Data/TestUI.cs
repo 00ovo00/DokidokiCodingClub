@@ -4,22 +4,31 @@ using UnityEngine.UI;
 
 public class TestUI : MonoBehaviour
 {
+    [SerializeField] private ChapterManager chapterManager;
     [SerializeField] private TextMeshProUGUI nameTxt;
     [SerializeField] private TextMeshProUGUI lineTxt;
     [SerializeField] private Button nextButton;
 
     public Dialogue[] dialogues;
     private int currentDialogueIndex = 0; 
-    private int currentLineIndex = 0; 
+    private int currentLineIndex = 0;
 
     private void Start()
     {
-        DialogueData dialogueData = DataManager.Instance.Parse("TestData");
-        if (dialogueData != null)
+        if (chapterManager == null)
         {
-            dialogues = dialogueData.dialogues;
-            UpdateUI();
+            chapterManager = FindObjectOfType<ChapterManager>();
         }
+
+        dialogues = chapterManager.GetDialogues();
+        if (dialogues == null || dialogues.Length == 0)
+        {
+            Debug.LogError("대화 데이터가 비어 있습니다!");
+            return;
+        }
+
+        chapterManager.onEnterChapter += UpdateUI;
+
     }
 
     private void UpdateUI()
