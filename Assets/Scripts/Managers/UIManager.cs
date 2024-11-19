@@ -36,8 +36,11 @@ public class UIManager : MonoBehaviour
             return (T)existingUI;
         }
         UIBase go = Resources.Load<UIBase>("UI/" + uiName);
-        if (go == null) // ÇÁ¸®ÆéÀÌ Á¦´ë·Î ·ÎµåµÇÁö ¾Ê¾ÒÀ» ¶§ ¿À·ù ¹æÁö
+        // TestCode
+        // UIBase go = Resources.Load<UIBase>("UI/TestUI/" + uiName);
+        if (go == null) // í”„ë¦¬í©ì´ ì œëŒ€ë¡œ ë¡œë“œë˜ì§€ ì•Šì•˜ì„ ë•Œ ì˜¤ë¥˜ ë°©ì§€
         {
+            Debug.Log($"Can't load UI {uiName}");
             return null;
         }
         var ui = Load<T>(go, uiName);

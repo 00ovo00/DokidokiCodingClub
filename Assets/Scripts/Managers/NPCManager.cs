@@ -4,6 +4,12 @@ public class NPCManager : SingletonBase<NPCManager>
 {
     public List<NPCData> NpcList = new List<NPCData>();
 
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+    }
+    
     private NPCData GetNPC(string name)
     {
         return NpcList.Find(npc => npc.NpcName == name);
