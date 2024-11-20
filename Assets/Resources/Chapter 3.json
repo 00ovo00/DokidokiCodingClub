@@ -1,18 +1,20 @@
 {
     "dialogues": [
-        {
-            "ID": 0,
-            "name": "플레이어",
-            "lines": [
-                "오늘은 객체 지향 프로그래밍 특강이 있는 날이다.",
-              "음, 매우 유익하군.",
-              "졸음과 싸우며 특강을 열심히 듣는다.."
-            ],
-            "isOption": false,
-            "Question": "",
-            "Options": [],
-            "Results": []
-        },
+      {
+        "ID": 0,
+        "name": "플레이어",
+        "lines": [
+          "오늘은 객체 지향 프로그래밍 특강이 있는 날이다.",
+          "음, 매우 유익하군.",
+          "졸음과 싸우며 특강을 열심히 듣는다.."
+        ],
+        "isOption": false,
+        "Question": "",
+        "Options": [],
+        "Results": [],
+        "Param": []
+
+      },
       {
         "ID": 1,
         "name": "이성언 튜터",
@@ -24,7 +26,8 @@
         "isOption": false,
         "Question": "",
         "Options": [],
-        "Results": []
+        "Results": [],
+        "Param": []
       },
       {
         "ID": 2,
@@ -44,8 +47,16 @@
           10,
           -5,
           -5,
-          -10]
+          -10
+        ],
+        "Param": [
+          3,
+          4,
+          5,
+          4
+        ]
       },
+
       {
         "ID": 3,
         "name": "이성언 튜터",
@@ -55,7 +66,8 @@
         "isOption": false,
         "Question": "",
         "Options": [],
-        "Results": []
+        "Results": [],
+        "Param": []
       },
       {
         "ID": 4,
@@ -66,7 +78,8 @@
         "isOption": false,
         "Question": "",
         "Options": [],
-        "Results": []
+        "Results": [],
+        "Param": []
       },
       {
         "ID": 5,
@@ -77,7 +90,21 @@
         "isOption": false,
         "Question": "",
         "Options": [],
-        "Results": []
+        "Results": [],
+        "Param": []
+      },
+      {
+        "ID": 6,
+        "name": "플레이어",
+        "lines": [
+          "어느 새 특강이 끝나고 저녁식사 시간이 다가왔다.",
+          "오늘 배운 내용이 머릿 속에서 사라지기 전에 블로그를 켜고 TIL을 작성했다."
+        ],
+        "isOption": false,
+        "Question": "",
+        "Options": [],
+        "Results": [],
+        "Param": []
       }
 
     ]
