@@ -8,7 +8,6 @@ public class UIManager : SingletonBase<UIManager>
 {
     [SerializeField] private Transform canvas;
 
-    public static UIManager Instance;
     public static float ScreenWidth = 1920;
     public static float ScreenHeight = 1080;
 
