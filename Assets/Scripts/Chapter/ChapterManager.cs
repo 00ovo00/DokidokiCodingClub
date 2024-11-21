@@ -25,7 +25,7 @@ public class ChapterManager : SingletonBase<ChapterManager>
 
     public Dialogue[] dialogues;
  
-    private void Awake() 
+    private void Awake()
     {
         _currentChapterIndex = 0;
         EnterChapter(_currentChapterIndex);
@@ -36,13 +36,14 @@ public class ChapterManager : SingletonBase<ChapterManager>
         string fileName = $"Chapter {chapterIndex + 1}";
         _currentChapter = (ChapterState)chapterIndex;
         DialogueData dialogueData = DataManager.Instance.Parse(fileName); 
-        if (dialogueData != null)
+        if (dialogueData != null && dialogueData.dialogues != null && dialogueData.dialogues.Length > 0)
         {
             dialogues = dialogueData.dialogues;
         }
         else
         {
             Debug.LogError("DialogueData가 null이거나 dialogues가 비어 있습니다.");
+            dialogues = new Dialogue[0];
         }
 
         onEnterChapter?.Invoke();

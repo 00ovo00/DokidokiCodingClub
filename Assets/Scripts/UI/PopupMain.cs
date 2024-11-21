@@ -12,6 +12,7 @@ public class PopupMain : UIBase
                 UIManager.Instance.Show<PopupA>();
                 break;
             case 1:
+                UIManager.Instance.Show<OptionPanel>();
                 break;
             case 2:
                 break;
@@ -19,5 +20,4 @@ public class PopupMain : UIBase
                 break;
         }
     }
-
 }
