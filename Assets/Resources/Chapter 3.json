@@ -12,7 +12,7 @@
 
         "Options": [],
         "Results": [],
-        "Param": [],
+        "Param": [1],
         "BGImage": [ "" ],
         "CharImage": [ "" ]
 
@@ -29,7 +29,7 @@
 
         "Options": [],
         "Results": [],
-        "Param": [],
+        "Param": [2],
         "BGImage": [ "" ],
         "CharImage": [ "" ]
       },
