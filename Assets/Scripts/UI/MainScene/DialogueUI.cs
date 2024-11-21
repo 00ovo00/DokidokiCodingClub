@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Collections;
 using TMPro;
 using UnityEngine;
  using UnityEngine.UI;
@@ -36,7 +37,8 @@ public partial class DialogueUI : UIBase
 
 
     private int currentDialogueIndex = 0; 
-    private int currentLineIndex = 0; 
+    private int currentLineIndex = 0;
+    private Coroutine typingCoroutine;
 
     private void UpdateUI()
     {
@@ -58,24 +60,40 @@ public partial class DialogueUI : UIBase
             return;
         }
 
+
         Dialogue currentDialogue = ChapterManager.Instance.dialogues[currentDialogueIndex];
         if (currentDialogue.lines.Length - 1 > currentLineIndex)
         {
             nameTxt.text = currentDialogue.name;
-            lineTxt.text = currentDialogue.lines[currentLineIndex];
+            //lineTxt.text = currentDialogue.lines[currentLineIndex];
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+            }
+            typingCoroutine = StartCoroutine(TypeLine(currentDialogue.lines[currentLineIndex]));
         }
         else
         {
             if (currentDialogue.isOption) // 선택지가 있는 대화일 경우 
             {
                 nameTxt.text = currentDialogue.name;
-                lineTxt.text = currentDialogue.lines[currentLineIndex];
+                //lineTxt.text = currentDialogue.lines[currentLineIndex];
+                if (typingCoroutine != null)
+                {
+                    StopCoroutine(typingCoroutine);
+                }
+                typingCoroutine = StartCoroutine(TypeLine(currentDialogue.lines[currentLineIndex]));
                 ShowOption(currentDialogue);
             }
             else // 일반 대화일 경우 
             {
                 nameTxt.text = currentDialogue.name;
-                lineTxt.text = currentDialogue.lines[currentLineIndex];
+                //lineTxt.text = currentDialogue.lines[currentLineIndex];
+                if (typingCoroutine != null)
+                {
+                    StopCoroutine(typingCoroutine);
+                }
+                typingCoroutine = StartCoroutine(TypeLine(currentDialogue.lines[currentLineIndex]));
             }
         }
 
@@ -146,11 +164,20 @@ public partial class DialogueUI : UIBase
     {
       
         int nextDialogueID = ChapterManager.Instance.dialogues[currentDialogueIndex].Param[resultIndex];
-        int resultID = ChapterManager.Instance.dialogues[currentDialogueIndex].Results[resultIndex];
+        // Results 배열이 있는지 확인하고 처리
+        if (ChapterManager.Instance.dialogues[currentDialogueIndex].Results != null && resultIndex < ChapterManager.Instance.dialogues[currentDialogueIndex].Results.Length)
+        {
+            int resultID = ChapterManager.Instance.dialogues[currentDialogueIndex].Results[resultIndex];
+            var resultPopup = UIManager.Instance.Show<Popup004>();
+            resultPopup.SetUpResults(resultID);
+        }
+
+
+        //int resultID = ChapterManager.Instance.dialogues[currentDialogueIndex].Results[resultIndex];
 
         UIManager.Instance.Hide<OptionPanel>();
-        var resultPopup = UIManager.Instance.Show<Popup004>();
-        resultPopup.SetUpResults(resultID);
+        //var resultPopup = UIManager.Instance.Show<Popup004>();
+       // resultPopup.SetUpResults(resultID);
 
         if (nextDialogueID >= 0 && nextDialogueID < ChapterManager.Instance.dialogues.Length)
         {
@@ -181,6 +208,16 @@ public partial class DialogueUI : UIBase
         }
 
         UpdateUI();
+    }
+
+    private IEnumerator TypeLine(string line)
+    {
+        lineTxt.text = "";
+        foreach (char letter in line.ToCharArray())
+        {
+            lineTxt.text += letter;
+            yield return new WaitForSeconds(0.05f); // 타이핑 속도 조절
+        }
     }
     public void PopUpMenu(int Index)
     {

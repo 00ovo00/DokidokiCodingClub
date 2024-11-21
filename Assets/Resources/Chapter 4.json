@@ -12,7 +12,7 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [],
+      "Param": [1],
       "BGImage": [ "Room" ],
       "CharImage": []
     },
@@ -53,7 +53,7 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [ 2 ],
+      "Param": [ 3 ],
       "BGImage": [ "AnimalShelter" ],
       "CharImage": [ "manager1_02" ]
     },
@@ -70,7 +70,7 @@
 
       "Options": [],
       "Results": [],
-      "Param": [ 3 ],
+      "Param": [ 4 ],
       "BGImage": [],
       "CharImage": []
     },
@@ -135,8 +135,8 @@
       ],
       "isOption": false,
       "Options": [],
-      "Results": [4],
-      "Param": [ 1 ],
+      "Results": [],
+      "Param": [ 14 ],
       "BGImage": [],
       "CharImage": []
     },
@@ -152,7 +152,7 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [ 8 ],
+      "Param": [ 9 ],
       "BGImage": [ "WallPainting" ],
       "CharImage": []
     },
@@ -169,7 +169,7 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [ 9 ],
+      "Param": [ 10 ],
       "BGImage": [],
       "CharImage": [ "tutor1_04" ]
     },
