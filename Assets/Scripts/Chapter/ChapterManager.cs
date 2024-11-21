@@ -23,6 +23,8 @@ public class ChapterManager : SingletonBase<ChapterManager>
     public Action onCurrentChapter;
     public Action onExitChapter;
 
+    public Action onFadeEffect; // 호출되면 사용
+
     public Dialogue[] dialogues;
  
     private void Awake()

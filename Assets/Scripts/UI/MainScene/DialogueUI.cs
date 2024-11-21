@@ -51,6 +51,7 @@ public partial class DialogueUI : UIBase
 
         if (currentDialogue.isOption)
         {
+            Debug.Log(currentDialogueIndex);
             ShowOption(currentDialogue);
         }
         else
@@ -58,8 +59,6 @@ public partial class DialogueUI : UIBase
             nameTxt.text = currentDialogue.name;
             lineTxt.text = currentDialogue.lines[currentLineIndex];
         }
-        //nameTxt.text = ChapterManager.Instance.dialogues[currentDialogueIndex].name;
-        //lineTxt.text = ChapterManager.Instance.dialogues[currentDialogueIndex].lines[currentLineIndex];
 
         prevButton.interactable = (currentDialogueIndex > 0 || currentLineIndex > 0);
     }

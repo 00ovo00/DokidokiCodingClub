@@ -19,7 +19,7 @@ public class OptionPanel : UIBase
             {
                 //optionButtons[i].gameObject.SetActive(true);
                 optionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = options[i];
-                int optionIndex = i; // Capture the current value of i
+                int optionIndex = i + 1; // Capture the current value of i
                 optionButtons[i].onClick.RemoveAllListeners();
                 optionButtons[i].onClick.AddListener(() => onOptionSelected(optionIndex));
             }

@@ -15,9 +15,10 @@ public class NoneUI : UIBase
         StartCoroutine(ChangeStateToDefaultAfterDelay());
     }
 
-    private void OnChangeBackground()
+    public void OnChangeBackground()
     {
         // 백그라운드 배경이 계속 변경되도록
+        Debug.Log("이미지 Fade");
     }
 
     private void OnDestroy()

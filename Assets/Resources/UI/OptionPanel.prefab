@@ -1076,7 +1076,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   questionText: {fileID: 919805844033656707}
-  optionButtons: []
+  optionButtons:
+  - {fileID: 1180312984148174718}
+  - {fileID: 9211662297837590577}
+  - {fileID: 9203033356503733724}
 --- !u!1 &6986613098509857206
 GameObject:
   m_ObjectHideFlags: 0
