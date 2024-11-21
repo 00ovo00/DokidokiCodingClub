@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,7 +27,7 @@ public partial class DialogueUI : UIBase
 
     private int currentDialogueIndex = 0;
     private int currentLineIndex = 0;
-
+    private Coroutine typingCoroutine;
     private void UpdateUI()
     {
         if (ChapterManager.Instance.dialogues == null || ChapterManager.Instance.dialogues.Length == 0)
@@ -57,7 +58,12 @@ public partial class DialogueUI : UIBase
         else
         {
             nameTxt.text = currentDialogue.name;
-            lineTxt.text = currentDialogue.lines[currentLineIndex];
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+            }
+            typingCoroutine = StartCoroutine(TypeLine(currentDialogue.lines[currentLineIndex]));
+            //lineTxt.text = currentDialogue.lines[currentLineIndex];
         }
 
         prevButton.interactable = (currentDialogueIndex > 0 || currentLineIndex > 0);
@@ -123,7 +129,15 @@ public partial class DialogueUI : UIBase
 
         UpdateUI();
     }
-
+    private IEnumerator TypeLine(string line)
+    {
+        lineTxt.text = "";
+        foreach (char letter in line.ToCharArray())
+        {
+            lineTxt.text += letter;
+            yield return new WaitForSeconds(0.05f); // 타이핑 속도 조절
+        }
+    }
     public void PopUpMenu(int Index)
     {
         switch (Index)
