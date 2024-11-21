@@ -56,7 +56,8 @@ public partial class DialogueUI : UIBase
 
         if (currentDialogue.isOption) // 선택지가 있는 대화일 경우 
         {
-            Debug.Log(currentDialogueIndex);
+            nameTxt.text = currentDialogue.name;
+            lineTxt.text = currentDialogue.lines[currentLineIndex];
             ShowOption(currentDialogue);
         }
         else // 일반 대화일 경우 
@@ -94,21 +95,23 @@ public partial class DialogueUI : UIBase
         if (optionPanel != null) 
         {
             Debug.Log(currentDialogueIndex);
-            optionPanel.SetupOptions(dialogue.Question, dialogue.Options, OnOptionSelected); // 실행합니다 
-            // 인덱스 값만 보내주고 그쪽에서 다 해결 OnOptionSelected
+            optionPanel.SetupOptions(dialogue.Options, OnOptionSelected); 
         }
     }
     public void OnOptionSelected(int resultIndex)
     {
-        // 만약 옵션의 0번을 눌렀다 0 =  D이거에 맞는 결과, 파라미터 인덱스 ==  
-        // 호감도에 따른 팝업 띄워줘야 해요 
-        // 옵션 판넬 끄고 호감도 팝업 띄워줬다가 코루틴 돌려서 3초 뒤에 삭제되기 
-
+      
         int nextDialogueID = ChapterManager.Instance.dialogues[currentDialogueIndex].Param[resultIndex];
+        int resultID = ChapterManager.Instance.dialogues[currentDialogueIndex].Results[resultIndex];
+
+        UIManager.Instance.Hide<OptionPanel>();
+        var resultPopup = UIManager.Instance.Show<Popup004>();
+        resultPopup.SetUpResults(resultID);
+
         if (nextDialogueID >= 0 && nextDialogueID < ChapterManager.Instance.dialogues.Length)
         {
             currentDialogueIndex = nextDialogueID;
-            currentLineIndex = 0; // 대화의 첫 번째 라인으로 이동
+            currentLineIndex = 0; 
         }
         else
         {
@@ -151,5 +154,3 @@ public partial class DialogueUI : UIBase
         }
     }
 }
-
-

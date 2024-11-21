@@ -6,26 +6,18 @@ using UnityEngine.UI;
 
 public class OptionPanel : UIBase
 {
-    [SerializeField] private TextMeshProUGUI questionText;
     [SerializeField] private Button[] optionButtons;
 
-    public void SetupOptions(string question, string[] options, System.Action<int> onOptionSelected)
+    public void SetupOptions(string[] options, System.Action<int> onOptionSelected)
     {
-        questionText.text = question;
-
         for (int i = 0; i < optionButtons.Length; i++) // 옵션에 있는 대사를 하나씩 넣어서 출력 
         {
             if (i < options.Length)
             {
-                //optionButtons[i].gameObject.SetActive(true);
                 optionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = options[i];
-                int optionIndex = i; // Capture the current value of i
+                int optionIndex = i; 
                 optionButtons[i].onClick.RemoveAllListeners();
                 optionButtons[i].onClick.AddListener(() => onOptionSelected(optionIndex));
-            }
-            else
-            {
-                //optionButtons[i].gameObject.SetActive(false);
             }
         }
     }
@@ -33,11 +25,6 @@ public class OptionPanel : UIBase
     {
         // 데이터를 주고 받을 일이 잇을 때 사용
         base.Opened(param);
-
-        if (param.Length > 0 && param[0] is string description)
-        {
-            questionText.text = description;
-        }
     }
 
     public void ShowMain()
