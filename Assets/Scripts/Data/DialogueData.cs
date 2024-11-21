@@ -8,6 +8,7 @@ public class Dialogue
     public string Question;
     public string[] Options;
     public int[] Results;
+    public int[] Param;
 }
 
 [System.Serializable]

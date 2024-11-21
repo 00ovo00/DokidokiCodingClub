@@ -54,6 +54,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  chapterManager: {fileID: 0}
+  nameTxt: {fileID: 4459326680222611243}
+  lineTxt: {fileID: 4476414782617660096}
+  nextButton: {fileID: 4294915329498769408}
+  prevButton: {fileID: 4069558289893526694}
+  optionUIPanel: {fileID: 0}
+  questionTxt: {fileID: 0}
+  optionButtons: []
 --- !u!1 &2470339930378248706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,7 +1231,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7775043784251119357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 995149941355422516}
+        m_TargetAssemblyTypeName: DialogueUI, Assembly-CSharp
+        m_MethodName: ShowNextLine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4942443053287776724
 MonoBehaviour:
   m_ObjectHideFlags: 0
