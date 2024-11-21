@@ -9,7 +9,7 @@
           "졸음과 싸우며 특강을 열심히 듣는다.."
         ],
         "isOption": false,
-        "Question": "",
+       
         "Options": [],
         "Results": [],
         "Param": []
@@ -24,7 +24,7 @@
           "여기서 [A]와 [B]에 들어갈 말로 알맞는 것을 차례대로 말씀해주세요"
         ],
         "isOption": false,
-        "Question": "",
+        
         "Options": [],
         "Results": [],
         "Param": []
@@ -33,10 +33,11 @@
         "ID": 2,
         "name": "플레이어",
         "lines": [
-          "퀴즈다! 중간중간 졸아서 자신 없는데 으으"
+          "퀴즈다! 중간중간 졸아서 자신 없는데 으으",
+          "나의 답은..."
         ],
         "isOption": true,
-        "Question": "나의 답은...",
+       
         "Options": [
           "결합도, 응집도",
           "응집도, 결합도",
@@ -64,10 +65,10 @@
           "정답입니다! 공부를 열심히 하셨군요. 성실한 모습이 보기 좋습니다."
         ],
         "isOption": false,
-        "Question": "",
+       
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [6]
       },
       {
         "ID": 4,
@@ -76,10 +77,10 @@
           "정답은 결합도, 응집도 입니다. 공부를 더 열심히 해봅시다."
         ],
         "isOption": false,
-        "Question": "",
+       
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [6]
       },
       {
         "ID": 5,
@@ -88,10 +89,10 @@
           "뭔가 아무렇게나 찍은 느낌인데, 아니겠지요?"
         ],
         "isOption": false,
-        "Question": "",
+        
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [6]
       },
       {
         "ID": 6,
@@ -101,7 +102,7 @@
           "오늘 배운 내용이 머릿 속에서 사라지기 전에 블로그를 켜고 TIL을 작성했다."
         ],
         "isOption": false,
-        "Question": "",
+        
         "Options": [],
         "Results": [],
         "Param": []
