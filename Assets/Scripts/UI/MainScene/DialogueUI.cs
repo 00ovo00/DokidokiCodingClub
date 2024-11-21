@@ -12,6 +12,10 @@ public partial class DialogueUI : UIBase
         prevButton.interactable = false;
         ChapterManager.Instance.onEnterChapter -= UpdateUI;
         ChapterManager.Instance.onEnterChapter += UpdateUI;
+
+        currentDialogueIndex = 0;
+        currentLineIndex = 0;
+        UpdateUI();
     }
 
     [Tooltip("캐릭터 이름이 표시됩니다.")]
@@ -81,23 +85,46 @@ public partial class DialogueUI : UIBase
     {
         currentLineIndex++;
 
-        if (currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length) // 대사 인덱스가 있다면 
+        if (currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length) // 현재 대화의 라인 인덱스를 초과했을 때
         {
-            if (ChapterManager.Instance.dialogues[currentDialogueIndex].isOption == false && ChapterManager.Instance.dialogues[currentDialogueIndex].Param.Length > 0)
+            // 현재 대화가 선택지가 없고 다음으로 이어지는 대화가 있는 경우
+            if (!ChapterManager.Instance.dialogues[currentDialogueIndex].isOption && ChapterManager.Instance.dialogues[currentDialogueIndex].Param.Length > 0)
             {
                 currentDialogueIndex = ChapterManager.Instance.dialogues[currentDialogueIndex].Param[0];
-                ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
                 currentLineIndex = 0;
             }
-
-            if (currentDialogueIndex >= ChapterManager.Instance.dialogues.Length - 1)
+            else if (currentDialogueIndex < ChapterManager.Instance.dialogues.Length - 1)
             {
+                // 마지막 대화가 아닌 경우 다음 대화로 이동
+                currentDialogueIndex++;
+                currentLineIndex = 0;
+            }
+            else
+            {
+                // 마지막 대사 처리 후 챕터 종료
                 currentDialogueIndex = 0;
                 currentLineIndex = 0;
                 ChapterManager.Instance.ExitChapter();
                 return;
             }
         }
+        //if (currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length) // 대사 인덱스가 있다면 
+        //{
+        //    if (ChapterManager.Instance.dialogues[currentDialogueIndex].isOption == false && ChapterManager.Instance.dialogues[currentDialogueIndex].Param.Length > 0)
+        //    {
+        //        currentDialogueIndex = ChapterManager.Instance.dialogues[currentDialogueIndex].Param[0];
+        //        //ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
+        //        currentLineIndex = 0;
+        //    }
+
+        //    if (currentDialogueIndex >= ChapterManager.Instance.dialogues.Length - 1)
+        //    {
+        //        currentDialogueIndex = 0;
+        //        currentLineIndex = 0;
+        //        ChapterManager.Instance.ExitChapter();
+        //        return;
+        //    }
+        //}
 
         UpdateUI(); 
     }
