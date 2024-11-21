@@ -8,10 +8,10 @@ public class UIBase : MonoBehaviour
 
     public virtual void Opened(params object[] param)
     {
-
+        
     }
 
-    public void Hide()
+    public void Hide() 
     {
         UIManager.Instance.Hide(gameObject.name);
     }

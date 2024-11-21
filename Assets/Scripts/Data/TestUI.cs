@@ -28,10 +28,11 @@ public class TestUI : MonoBehaviour
 
             if (currentDialogueIndex >= ChapterManager.Instance.dialogues.Length)
             {
-                Debug.Log("모든 대화가 종료되었습니다.");
                 return;
             }
         }
+
+        ChapterManager.Instance.ExitChapter();
 
         UpdateUI();
     }
