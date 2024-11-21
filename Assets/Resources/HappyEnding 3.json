@@ -1,0 +1,103 @@
+{
+    "dialogues": [
+      {
+        "ID": 0,
+        "name": "플레이어",
+        "lines": [
+          "오늘은 스파르타 코딩 클럽 직원으로서 첫번째 날이다.",
+          "이른 시간이라 그런지 아직 사람이 많이 보이지 않는다",
+          "스케줄을 다시 꼼꼼히 확인하고 있는데 누군가 내 어깨를 톡톡 건드린다."
+
+
+        ],
+        "isOption": false,
+        "Question": "",
+        "Options": [],
+        "Results": [],
+        "Param": []
+      },
+      {
+        "ID": 1,
+        "name": "김재경 튜터",
+        "lines": [
+          "안녕하세요 플레이어씨?",
+          "수강생으로만 뵙다가 같은 직장 동료로 만나니 뭔가 새로운 느낌이네요"
+
+        ],
+        "isOption": false,
+        "Question": "",
+        "Options": [],
+        "Results": [],
+        "Param": []
+      },
+      {
+        "ID": 2,
+        "name": "플레이어",
+        "lines": [
+          "아, 안녕하세요 튜터님!"
+
+        ],
+        "isOption": false,
+        "Question": "",
+        "Options": [],
+        "Results": [],
+        "Param": []
+      },
+      {
+        "ID": 3,
+        "name": "김재경 튜터",
+        "lines": [
+          "하하 이제 같은 직장 동료니 좀 편하게 대하세요."
+          
+        ],
+        "isOption": false,
+        "Question": "",
+        "Options": [],
+        "Results": [],
+        "Param": []
+      },
+      {
+        "ID": 4,
+        "name": "플레이어",
+        "lines": [
+          "아하하 네.."
+      
+
+        ],
+        "isOption": false,
+        "Question": "",
+        "Options": [],
+        "Results": [],
+        "Param": []
+      },
+      {
+        "ID": 5,
+        "name": "김재경 튜터",
+        "lines": [
+          "점심 어디서 먹을지 아직 안 정하셨죠?",
+          "스파르타 코딩 클럽 근처엔 맛집이 많아요",
+          "첫날이고 하니 오늘은 제가 해물파스타 쏘겠습니다."
+
+        ],
+        "isOption": false,
+        "Question": "",
+        "Options": [],
+        "Results": [],
+        "Param": []
+      },
+      {
+        "ID": 6,
+        "name": "플레이어",
+        "lines": [
+          "네! 감사합니다!!",
+          "점심 때 먹을 해물파스타에 군침을 삼키며,설레는 마음으로 개발자로써 첫 발을 내딛었다."
+
+        ],
+        "isOption": false,
+        "Question": "",
+        "Options": [],
+        "Results": [],
+        "Param": []
+      }
+    ]
+}

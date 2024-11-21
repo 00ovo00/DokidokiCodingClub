@@ -25,6 +25,10 @@
       "Results": [
         20,
         -10
+      ],
+      "Param": [
+        1,
+        2
       ]
     },
     {
@@ -52,7 +56,10 @@
       "isOption": false,
       "Question": "",
       "Options": [],
-      "Results": []
+      "Results": [],
+      "Param": [
+        3
+      ]
     },
     {
       "ID": 3,
@@ -71,6 +78,10 @@
       "Results": [
         -15,
         5
+      ],
+      "Param": [
+        4,
+        5
       ]
     },
     {
@@ -84,7 +95,8 @@
       "isOption": false,
       "Question": "",
       "Options": [],
-      "Results": []
+      "Results": [],
+      "Param": []
     },
     {
       "ID": 5,
@@ -99,7 +111,24 @@
       "isOption": false,
       "Question": "",
       "Options": [],
-      "Results": []
+      "Results": [],
+      "Param": []
+    },
+    {
+      "ID": 6,
+      "name": "플레이어",
+      "lines": [
+        "튜터님이 도와주신 덕분에 오류를 고치고 무사히 발표까지 마칠 수 있었다.",
+        "한 차례 폭풍이 지나간 느낌이다.",
+        "이제 곧 수료일이라니 실감이 안나는걸...",
+        "알 수 없는 감정이 솟아오르는 것을 느끼며 오늘 하루를 정리했다."
+
+      ],
+      "isOption": false,
+      "Question": "",
+      "Options": [],
+      "Results": [],
+      "Param": []
     }
   ]
 }

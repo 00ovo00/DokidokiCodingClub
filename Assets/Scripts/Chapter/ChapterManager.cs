@@ -52,7 +52,7 @@ public class ChapterManager : SingletonBase<ChapterManager>
     {
         onCurrentChapter?.Invoke();
     }
-    private void ExitChapter()
+    public void ExitChapter()
     {
         onExitChapter?.Invoke();
         _currentChapterIndex++;

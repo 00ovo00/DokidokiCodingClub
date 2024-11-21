@@ -4,28 +4,14 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManager : SingletonBase<UIManager>
 {
     [SerializeField] private Transform canvas;
 
-    public static UIManager Instance;
     public static float ScreenWidth = 1920;
     public static float ScreenHeight = 1080;
 
     private Dictionary<string, UIBase> uiDictionary = new Dictionary<string, UIBase>();
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public T Show<T>(params object[] param) where T : UIBase
     {
