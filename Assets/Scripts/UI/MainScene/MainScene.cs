@@ -45,8 +45,8 @@ public class MainScene : SingletonBase<MainScene>
         switch (state)
         {
             case UIState.None:
-                ChapterManager.Instance.onFadeEffect += UIManager.Instance.Show<NoneUI>().OnChangeBackground;
-                ChapterManager.Instance.onFadeEffect?.Invoke();
+                UIManager.Instance.Show<NoneUI>();
+                //ChapterManager.Instance.onFadeEffect += UIManager.Instance.Show<NoneUI>().OnChangeBackground;
                 Debug.Log("None 상태입니다.");
                 break;
             case UIState.Default:

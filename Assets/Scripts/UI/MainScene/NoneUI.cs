@@ -7,18 +7,56 @@ using System.Collections;
 
 public class NoneUI : UIBase
 {
+    [SerializeField] private CanvasGroup backgroundGroup;
+    [SerializeField] private CanvasGroup characterGroup;
+
+    [SerializeField] private float fadeDuration = 1f;
+
+    private FadeController fadeController;
+
     // 백그라운드 이미지 표시 
     private void Start()
     {
+        fadeController = gameObject.AddComponent<FadeController>();
+
+        ChapterManager.Instance.onFadeEffect += OnChangeBackground;
+        ChapterManager.Instance.onFadeEffect?.Invoke();
+
         Debug.Log("백그라운드 UI가 호출되었습니다.");
         MainScene.Instance.OnStateChanged += HandleStateChange;
         StartCoroutine(ChangeStateToDefaultAfterDelay());
+
     }
 
-    public void OnChangeBackground()
+    private void OnChangeBackground()
     {
-        // 백그라운드 배경이 계속 변경되도록
-        Debug.Log("이미지 Fade");
+
+    }
+    
+    public IEnumerator FadeBackGround()
+    {
+        yield return fadeController.FadeOut(backgroundGroup, fadeDuration);
+
+        ChangeBackGroundImage();
+
+        yield return fadeController.FadeIn(backgroundGroup, fadeDuration);
+    }
+    public IEnumerator FadeCharacter()
+    {
+        yield return fadeController.FadeOut(characterGroup, fadeDuration);
+
+        ChangeCharacterImage();
+
+        yield return fadeController.FadeIn(characterGroup, fadeDuration);
+    }
+    private void ChangeBackGroundImage()
+    {
+        Debug.Log("배경 이미지 전환 코드");
+    }
+
+    private void ChangeCharacterImage()
+    {
+        Debug.Log("캐릭터 이미지 전환 코드");
     }
 
     private void OnDestroy()
