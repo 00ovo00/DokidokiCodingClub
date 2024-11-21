@@ -86,6 +86,7 @@ public partial class DialogueUI : UIBase
             if (ChapterManager.Instance.dialogues[currentDialogueIndex].isOption == false && ChapterManager.Instance.dialogues[currentDialogueIndex].Param.Length > 0)
             {
                 currentDialogueIndex = ChapterManager.Instance.dialogues[currentDialogueIndex].Param[0];
+                ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
                 currentLineIndex = 0;
             }
 
@@ -101,7 +102,10 @@ public partial class DialogueUI : UIBase
         UpdateUI(); 
     }
     private void ShowOption(Dialogue dialogue)
+
     {
+        //currentDialogueIndex++;
+        //ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
         Debug.Log(currentDialogueIndex);
 
         var optionPanel = UIManager.Instance.Show<OptionPanel>();

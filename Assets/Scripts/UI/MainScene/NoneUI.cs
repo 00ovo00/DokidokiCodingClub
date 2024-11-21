@@ -32,7 +32,7 @@ public class NoneUI : UIBase
     {
 
     }
-    
+
     public IEnumerator FadeBackGround()
     {
         yield return fadeController.FadeOut(backgroundGroup, fadeDuration);
@@ -64,7 +64,7 @@ public class NoneUI : UIBase
         MainScene.Instance.OnStateChanged -= HandleStateChange;
     }
 
-    private void HandleStateChange(UIState newState) 
+    private void HandleStateChange(UIState newState)
     {
         // 여기 말고 다이얼로그 쪽에서 페이드 주기
         Debug.Log($"상태가 변경되었습니다: {newState}");
@@ -72,7 +72,7 @@ public class NoneUI : UIBase
 
     private IEnumerator ChangeStateToDefaultAfterDelay()
     {
-        yield return new WaitForSeconds(2f); 
+        yield return new WaitForSeconds(2f);
         MainScene.Instance.SetState(UIState.Default); // 상태 변경
     }
 }

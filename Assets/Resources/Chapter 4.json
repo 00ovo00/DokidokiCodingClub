@@ -7,7 +7,20 @@
         "시끄러운 알람 소리에 졸린 눈을 부비며 일어났다",
         "뭐야... 주말인데.",
         "스파르타 코딩 클럽 봉사활동 날.",
-        "헉 깜빡했다!",
+        "헉 깜빡했다!"
+      ],
+      "isOption": true,
+      "Options": [],
+      "Results": [],
+      "Param": [],
+      "BGImage": [ "Room" ],
+      "CharImage": []
+    },
+    {
+      "ID": 1,
+      "name": "플레이어",
+      "lines": [
+
         "허둥지둥 나갈 채비를 하고 소집 장소로 향했다.",
         "서둘러 가보면 여러 대의 버스가 대기하고 있다.",
         "그러고보니 각 버스마다 목적지가 다르다고 했지.",
@@ -20,15 +33,16 @@
       ],
       "Results": [],
       "Param": [
-        1,
-        7
+        2,
+        8
       ],
-      "BGImage": [ "Room" ],
-      "CharImage": [ ]
+      "BGImage": [ "BusGarage" ],
+      "CharImage": []
     },
 
+
     {
-      "ID": 1,
+      "ID": 2,
       "name": "플레이어",
       "lines": [
         "유기견 봉사 버스에 올라 목적지로 향했다.",
@@ -39,12 +53,12 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [2],
+      "Param": [ 2 ],
       "BGImage": [ "AnimalShelter" ],
       "CharImage": [ "manager1_02" ]
     },
     {
-      "ID": 2,
+      "ID": 3,
       "name": "안혜린 매니저",
       "lines": [
         "안녕하세요? 무슨 일 있나요?",
@@ -56,12 +70,12 @@
 
       "Options": [],
       "Results": [],
-      "Param": [3],
-      "BGImage": [ ],
+      "Param": [ 3 ],
+      "BGImage": [],
       "CharImage": []
     },
     {
-      "ID": 3,
+      "ID": 4,
       "name": "플레이어",
       "lines": [
         "오전 봉사활동을 마치고, 매니저님과 함께 근처 식당을 찾아봤다.",
@@ -80,15 +94,15 @@
         5
       ],
       "Param": [
-        4,
         5,
-        6
+        6,
+        7
       ],
       "BGImage": [ "CityArea" ],
-      "CharImage": [ ]
+      "CharImage": []
     },
     {
-      "ID": 4,
+      "ID": 5,
       "name": "안혜린 매니저",
       "lines": [
         "아 제가 단 걸 잘 못 먹어서... 저는 그럼 근처 편의점에서 라면 하나 사올게요!"
@@ -96,12 +110,12 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [ 13 ],
-      "BGImage": [ ],
-      "CharImage": [ ]
+      "Param": [ 14 ],
+      "BGImage": [],
+      "CharImage": []
     },
     {
-      "ID": 5,
+      "ID": 6,
       "name": "안혜린 매니저",
       "lines": [
         "저 뿌링클 엄청 좋아하는데! 디핑 소스도 추가해요 진짜 맛있어요 그거."
@@ -109,25 +123,25 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [ 13 ],
+      "Param": [ 14 ],
       "BGImage": [],
-      "CharImage": [ ]
+      "CharImage": []
     },
     {
-      "ID": 6,
+      "ID": 7,
       "name": "안혜린 매니저",
       "lines": [
         "그럴까요? 전 라면 좋아해서 플레이어님만 괜찮으시다면 그걸로 해요!"
       ],
       "isOption": false,
       "Options": [],
-      "Results": [],
-      "Param": [ 13 ],
-      "BGImage": [ ],
+      "Results": [4],
+      "Param": [ 1 ],
+      "BGImage": [],
       "CharImage": []
     },
     {
-      "ID": 7,
+      "ID": 8,
       "name": "플레이어",
       "lines": [
         "벽화 그리기 버스에 올라 목적지로 향했다.",
@@ -138,12 +152,12 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [8],
+      "Param": [ 8 ],
       "BGImage": [ "WallPainting" ],
-      "CharImage": [ ]
+      "CharImage": []
     },
     {
-      "ID": 8,
+      "ID": 9,
       "name": "이성언 튜터",
       "lines": [
         "어...안녕하세요?",
@@ -155,12 +169,12 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [9],
-      "BGImage": [ ],
+      "Param": [ 9 ],
+      "BGImage": [],
       "CharImage": [ "tutor1_04" ]
     },
     {
-      "ID": 9,
+      "ID": 10,
       "name": "플레이어",
       "lines": [
         "오전 봉사활동을 마치고, 튜터님과 함께 근처 식당을 찾아봤다."
@@ -179,16 +193,16 @@
         0
       ],
       "Param": [
-        10,
         11,
-        12
+        12,
+        13
       ],
       "BGImage": [ "CityArea" ],
       "CharImage": [ "tutor1_01" ]
 
     },
     {
-      "ID": 10,
+      "ID": 11,
       "name": "이성언 튜터",
       "lines": [
         "! 저 피자 좋아하는데 잘 됐네요.",
@@ -198,12 +212,12 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [ 13 ],
+      "Param": [ 14 ],
       "BGImage": [],
-      "CharImage": [ ]
+      "CharImage": []
     },
     {
-      "ID": 11,
+      "ID": 12,
       "name": "이성언 튜터",
       "lines": [
         "아.. 저 콩비지는 안 좋아해서...",
@@ -212,12 +226,12 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [ 13 ],
+      "Param": [ 14 ],
       "BGImage": [],
       "CharImage": []
     },
     {
-      "ID": 12,
+      "ID": 13,
       "name": "이성언 튜터",
       "lines": [
         "일하느라 피곤한데 낮잠이나 잡시다!"
@@ -225,12 +239,12 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [ 13 ],
+      "Param": [ 14 ],
       "BGImage": [],
       "CharImage": []
     },
     {
-      "ID": 13,
+      "ID": 14,
       "name": "플레이어",
       "lines": [
         "점심 식사 이후 오후까지 봉사활동을 하고 다른 분들과 헤어졌다.",

@@ -24,6 +24,7 @@ public class ChapterManager : SingletonBase<ChapterManager>
     public Action onExitChapter;
 
     public Action onFadeEffect; // 호출되면 사용
+    public Action<int> ChangeArt; //
 
     public Dialogue[] dialogues;
 
@@ -66,5 +67,10 @@ public class ChapterManager : SingletonBase<ChapterManager>
         }
 
 
+    }
+    
+    public void OnDialogueIndexChanged(int newDialogueIndex)
+    {
+        ChangeArt?.Invoke(newDialogueIndex);
     }
 }

@@ -9,6 +9,10 @@ public class Dialogue
     public string[] Options;
     public int[] Results;
     public int[] Param;
+    public string[] BGImage;
+    public string[] CharImage;
+
+
 }
 
 [System.Serializable]
