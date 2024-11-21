@@ -4,9 +4,14 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
  using UnityEngine.UI;
+using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 public partial class DialogueUI : UIBase
 {
+    // 캐릭터별 호감도 관리 딕셔너리
+    private Dictionary<string, int> affectionLevels = new Dictionary<string, int>();
+
     // 대화창 호출 
     private void Start()
     {
@@ -16,6 +21,12 @@ public partial class DialogueUI : UIBase
 
         currentDialogueIndex = 0;
         currentLineIndex = 0;
+
+        // 호감도 초기화 (캐릭터 이름, 초기 호감도)
+        affectionLevels["안혜린 매니저"] = 30;
+        affectionLevels["이성언 튜터"] = 30;
+        affectionLevels["김재경 튜터"] = 30;
+
         UpdateUI();
     }
 
@@ -105,6 +116,13 @@ public partial class DialogueUI : UIBase
 
         if (currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length) // 현재 대화의 라인 인덱스를 초과했을 때
         {
+            // 챕터 7에서 호감도에 따른 분기 처리
+            if (ChapterManager.Instance.CurrentChapterIndex == 6)
+            {
+                HandleChapter7();
+                return;
+            }
+
             // 현재 대화가 선택지가 없고 다음으로 이어지는 대화가 있는 경우
             if (!ChapterManager.Instance.dialogues[currentDialogueIndex].isOption && ChapterManager.Instance.dialogues[currentDialogueIndex].Param.Length > 0)
             {
@@ -167,7 +185,10 @@ public partial class DialogueUI : UIBase
         // Results 배열이 있는지 확인하고 처리
         if (ChapterManager.Instance.dialogues[currentDialogueIndex].Results != null && resultIndex < ChapterManager.Instance.dialogues[currentDialogueIndex].Results.Length)
         {
-            int resultID = ChapterManager.Instance.dialogues[currentDialogueIndex].Results[resultIndex];
+            string resultName = ChapterManager.Instance.dialogues[currentDialogueIndex].Target[resultIndex];  // 호감작 인물 이름
+            int resultID = ChapterManager.Instance.dialogues[currentDialogueIndex].Results[resultIndex]; //호감도 수치
+            affectionLevels[resultName] += resultID; // 수치 반영
+
             var resultPopup = UIManager.Instance.Show<Popup004>();
             resultPopup.SetUpResults(resultID);
         }
@@ -233,5 +254,37 @@ public partial class DialogueUI : UIBase
                 UIManager.Instance.Show<Popup003>();
                 break;
         }
+    }
+
+    // 챕터 7에서의 분기 처리 메서드
+    private void HandleChapter7()
+    {
+        var sortedAffectionLevels = affectionLevels.OrderByDescending(x => x.Value).ToList();
+        Debug.Log(sortedAffectionLevels);
+        string character = sortedAffectionLevels[0].Key;
+         Debug.Log(character);
+
+        if (affectionLevels[character] >= 50)
+        {
+            currentDialogueIndex = 2;
+           
+            
+        }
+        else
+        {
+            currentDialogueIndex = 1;
+        }
+
+        currentLineIndex = 0;
+        UpdateUI();
+    }
+    // 호감도가 가장 높은 캐릭터의 엔딩을 보여주는 메서드
+    private void ShowHappyEnding()
+    {
+
+        var highestAffectionCharacter = affectionLevels.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+        EndingManager.Instance.EnterEnding(highestAffectionCharacter);
+
+        EndingManager.Instance.EnterEnding(highestAffectionCharacter);
     }
 }

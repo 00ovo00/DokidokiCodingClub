@@ -11,8 +11,9 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
-        "Param": [1],
+        "Param": [ 1 ],
         "BGImage": [ "Room" ],
         "CharImage": []
 
@@ -28,9 +29,10 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
-        "Param": [2],
-        "BGImage": ["None"],
+        "Param": [ 2 ],
+        "BGImage": [ "None" ],
         "CharImage": [ "tutor1_05" ]
       },
       {
@@ -48,6 +50,7 @@
           "모르겠다, 그냥 찍어!",
           "묵언수행을 한다"
         ],
+        "Target": [ "이성언 튜터", "이성언 튜터", "이성언 튜터", "이성언 튜터" ],
         "Results": [
           10,
           -5,
@@ -73,6 +76,7 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [ 6 ],
         "BGImage": [],
@@ -87,6 +91,7 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [ 6 ],
         "BGImage": [],
@@ -101,6 +106,7 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [ 6 ],
         "BGImage": [],
@@ -116,6 +122,7 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [],
         "BGImage": [],

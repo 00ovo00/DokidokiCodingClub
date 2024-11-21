@@ -33,6 +33,10 @@ public class ChapterManager : SingletonBase<ChapterManager>
         _currentChapterIndex = 0;
         EnterChapter(_currentChapterIndex);
     }
+    public int CurrentChapterIndex // 다른 클래스에서 읽기 전용으로 접근 가능
+    {
+        get { return _currentChapterIndex; }
+    }
 
     private void EnterChapter(int chapterIndex)
     {
