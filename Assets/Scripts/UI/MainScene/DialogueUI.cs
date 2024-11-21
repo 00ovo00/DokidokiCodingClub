@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+ using UnityEngine.UI;
 
 public partial class DialogueUI : UIBase
 {
@@ -9,7 +10,8 @@ public partial class DialogueUI : UIBase
     private void Start()
     {
         prevButton.interactable = false;
-        UpdateUI(); // 챕터 매니저에서 실행으로 변경 
+        ChapterManager.Instance.onEnterChapter -= UpdateUI;
+        ChapterManager.Instance.onEnterChapter += UpdateUI;
     }
 
     [Tooltip("캐릭터 이름이 표시됩니다.")]
@@ -48,39 +50,50 @@ public partial class DialogueUI : UIBase
 
         if (currentLineIndex < 0 || currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length)
         {
-            // 라인 인덱스가 덤위를 벗어갔을 때 => 종료가 아니라 챕터 인덱스를 늘려줘야 됨 
+            // 라인 인덱스가 덤위를 벗어갔을 때 
             return;
         }
 
         Dialogue currentDialogue = ChapterManager.Instance.dialogues[currentDialogueIndex];
-
-        if (currentDialogue.isOption) // 선택지가 있는 대화일 경우 
+        if (currentDialogue.lines.Length - 1 > currentLineIndex)
         {
             nameTxt.text = currentDialogue.name;
             lineTxt.text = currentDialogue.lines[currentLineIndex];
-            ShowOption(currentDialogue);
         }
-        else // 일반 대화일 경우 
+        else
         {
-            nameTxt.text = currentDialogue.name;
-            lineTxt.text = currentDialogue.lines[currentLineIndex];
+            if (currentDialogue.isOption) // 선택지가 있는 대화일 경우 
+            {
+                nameTxt.text = currentDialogue.name;
+                lineTxt.text = currentDialogue.lines[currentLineIndex];
+                ShowOption(currentDialogue);
+            }
+            else // 일반 대화일 경우 
+            {
+                nameTxt.text = currentDialogue.name;
+                lineTxt.text = currentDialogue.lines[currentLineIndex];
+            }
         }
 
         prevButton.interactable = (currentDialogueIndex > 0 || currentLineIndex > 0); // 첫번째 대화나 첫번째 라인이 아니면 활성화 
     }
     public void ShowNextLine()
     {
-        currentLineIndex++; 
+        currentLineIndex++;
 
-        if (currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length)
+        if (currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length) // 대사 인덱스가 있다면 
         {
-            currentDialogueIndex++; 
-            currentLineIndex = 0;  
-
-            if (currentDialogueIndex >= ChapterManager.Instance.dialogues.Length) 
+            if (ChapterManager.Instance.dialogues[currentDialogueIndex].isOption == false && ChapterManager.Instance.dialogues[currentDialogueIndex].Param.Length > 0)
             {
-                currentDialogueIndex = ChapterManager.Instance.dialogues.Length - 1;
-                currentLineIndex = ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length - 1;
+                currentDialogueIndex = ChapterManager.Instance.dialogues[currentDialogueIndex].Param[0];
+                currentLineIndex = 0;
+            }
+
+            if (currentDialogueIndex >= ChapterManager.Instance.dialogues.Length - 1)
+            {
+                currentDialogueIndex = 0;
+                currentLineIndex = 0;
+                ChapterManager.Instance.ExitChapter();
                 return;
             }
         }
