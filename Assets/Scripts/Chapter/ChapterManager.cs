@@ -26,8 +26,8 @@ public class ChapterManager : SingletonBase<ChapterManager>
     public Action onFadeEffect; // 호출되면 사용
 
     public Dialogue[] dialogues;
- 
-    private void Awake()
+
+    private void Start()
     {
         _currentChapterIndex = 0;
         EnterChapter(_currentChapterIndex);
@@ -38,30 +38,33 @@ public class ChapterManager : SingletonBase<ChapterManager>
         string fileName = $"Chapter {chapterIndex + 1}";
         _currentChapter = (ChapterState)chapterIndex;
         DialogueData dialogueData = DataManager.Instance.Parse(fileName); 
+
         if (dialogueData != null && dialogueData.dialogues != null && dialogueData.dialogues.Length > 0)
         {
             dialogues = dialogueData.dialogues;
         }
         else
         {
-            Debug.LogError("DialogueData가 null이거나 dialogues가 비어 있습니다.");
             dialogues = new Dialogue[0];
         }
 
         onEnterChapter?.Invoke();
     }
-    private void CurrentChapter()
-    {
-        onCurrentChapter?.Invoke();
-    }
+    //private void CurrentChapter()
+    //{
+    //    onCurrentChapter?.Invoke();
+    //}
     public void ExitChapter()
     {
         onExitChapter?.Invoke();
         _currentChapterIndex++;
+        EnterChapter(_currentChapterIndex);
 
         if (_currentChapterIndex >= System.Enum.GetValues(typeof(ChapterState)).Length)
         {
             return;
         }
+
+
     }
 }
