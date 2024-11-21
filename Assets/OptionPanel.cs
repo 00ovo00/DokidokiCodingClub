@@ -14,11 +14,17 @@ public class OptionPanel : UIBase
         {
             if (i < options.Length)
             {
+                optionButtons[i].gameObject.SetActive(true);
                 optionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = options[i];
                 int optionIndex = i; 
                 optionButtons[i].onClick.RemoveAllListeners();
                 optionButtons[i].onClick.AddListener(() => onOptionSelected(optionIndex));
             }
+            else
+            {
+                optionButtons[i].gameObject.SetActive(false);
+            }
+            
         }
     }
     public override void Opened(params object[] param)
