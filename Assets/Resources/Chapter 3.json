@@ -9,10 +9,12 @@
           "졸음과 싸우며 특강을 열심히 듣는다.."
         ],
         "isOption": false,
-       
+
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
 
       },
       {
@@ -24,10 +26,12 @@
           "여기서 [A]와 [B]에 들어갈 말로 알맞는 것을 차례대로 말씀해주세요"
         ],
         "isOption": false,
-        
+
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 2,
@@ -37,7 +41,7 @@
           "나의 답은..."
         ],
         "isOption": true,
-       
+
         "Options": [
           "결합도, 응집도",
           "응집도, 결합도",
@@ -55,7 +59,9 @@
           4,
           5,
           4
-        ]
+        ],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
 
       {
@@ -65,10 +71,12 @@
           "정답입니다! 공부를 열심히 하셨군요. 성실한 모습이 보기 좋습니다."
         ],
         "isOption": false,
-       
+
         "Options": [],
         "Results": [],
-        "Param": [6]
+        "Param": [ 6 ],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 4,
@@ -77,10 +85,12 @@
           "정답은 결합도, 응집도 입니다. 공부를 더 열심히 해봅시다."
         ],
         "isOption": false,
-       
+
         "Options": [],
         "Results": [],
-        "Param": [6]
+        "Param": [ 6 ],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 5,
@@ -89,10 +99,12 @@
           "뭔가 아무렇게나 찍은 느낌인데, 아니겠지요?"
         ],
         "isOption": false,
-        
+
         "Options": [],
         "Results": [],
-        "Param": [6]
+        "Param": [ 6 ],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 6,
@@ -102,10 +114,12 @@
           "오늘 배운 내용이 머릿 속에서 사라지기 전에 블로그를 켜고 TIL을 작성했다."
         ],
         "isOption": false,
-        
+
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       }
 
     ]

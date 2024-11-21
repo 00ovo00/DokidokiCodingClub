@@ -1,5 +1,4 @@
-{
-    "dialogues": [
+{"dialogues": [
       {
         "ID": 0,
         "name": "플레이어",
@@ -13,7 +12,9 @@
         "isOption": false,
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 1,
@@ -26,7 +27,9 @@
         "isOption": false,
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 2,
@@ -38,32 +41,38 @@
         "isOption": false,
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 3,
         "name": "김재경 튜터",
         "lines": [
           "하하 이제 같은 직장 동료니 좀 편하게 대하세요."
-          
+
         ],
         "isOption": false,
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 4,
         "name": "플레이어",
         "lines": [
           "아하하 네.."
-      
+
 
         ],
         "isOption": false,
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 5,
@@ -77,7 +86,9 @@
         "isOption": false,
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 6,
@@ -90,7 +101,9 @@
         "isOption": false,
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       }
     ]
 }

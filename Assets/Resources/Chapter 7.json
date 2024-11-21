@@ -18,7 +18,9 @@
         "isOption": false,
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 1,
@@ -33,7 +35,9 @@
         "isOption": false,
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 2,
@@ -47,7 +51,9 @@
         "isOption": false,
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       }
     ]
 }

@@ -29,7 +29,9 @@
       "Param": [
         1,
         2
-      ]
+      ],
+      "BGImage": [ "" ],
+      "CharImage": [ "" ]
     },
     {
       "ID": 1,
@@ -42,7 +44,10 @@
       "isOption": false,
       "Question": "",
       "Options": [],
-      "Results": [6]
+      "Results": [],
+      "Param": [6],
+      "BGImage": [ "" ],
+      "CharImage": [ "" ]
     },
     {
       "ID": 2,
@@ -59,7 +64,9 @@
       "Results": [],
       "Param": [
         3
-      ]
+      ],
+      "BGImage": [ "" ],
+      "CharImage": [ "" ]
     },
     {
       "ID": 3,
@@ -82,7 +89,9 @@
       "Param": [
         4,
         5
-      ]
+      ],
+      "BGImage": [ "" ],
+      "CharImage": [ "" ]
     },
     {
       "ID": 4,
@@ -95,7 +104,9 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [6]
+      "Param": [ 6 ],
+      "BGImage": [ "" ],
+      "CharImage": [ "" ]
     },
     {
       "ID": 5,
@@ -110,7 +121,9 @@
       "isOption": false,
       "Options": [],
       "Results": [],
-      "Param": [6]
+      "Param": [ 6 ],
+      "BGImage": [ "" ],
+      "CharImage": [ "" ]
     },
     {
       "ID": 6,
@@ -126,7 +139,9 @@
       "Question": "",
       "Options": [],
       "Results": [],
-      "Param": []
+      "Param": [],
+      "BGImage": [ "" ],
+      "CharImage": [ "" ]
     }
   ]
 }

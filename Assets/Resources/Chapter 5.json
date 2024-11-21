@@ -27,7 +27,9 @@
           1,
           2,
           3
-        ]
+        ],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 1,
@@ -37,10 +39,12 @@
           "제가 잘 설명해드릴테니 한 번 들어보세요."
         ],
         "isOption": false,
-        
+
         "Options": [],
         "Results": [],
-        "Param": [4]
+        "Param": [ 4 ],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 2,
@@ -50,10 +54,12 @@
           "개발을 하다 이해가 안되는 부분이 있다면 혼자 고민하지 마시고 조금 더 일찍 찾아와주세요"
         ],
         "isOption": false,
-       
+
         "Options": [],
         "Results": [],
-        "Param": [4]
+        "Param": [ 4 ],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 3,
@@ -64,10 +70,12 @@
           "프로젝트 파이팅하세요~"
         ],
         "isOption": false,
-        
+
         "Options": [],
         "Results": [],
-        "Param": [4]
+        "Param": [ 4 ],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       },
       {
         "ID": 4,
@@ -77,10 +85,12 @@
           "개발 공부에 대한 의지가 차오르는 것이 느껴졌다."
         ],
         "isOption": false,
-        
+
         "Options": [],
         "Results": [],
-        "Param": []
+        "Param": [],
+        "BGImage": [ "" ],
+        "CharImage": [ "" ]
       }
     ]
 }
