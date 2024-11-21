@@ -9,23 +9,28 @@ public partial class DialogueUI : UIBase
     private void Start()
     {
         prevButton.interactable = false;
-        UpdateUI();
-        // 여기서 데이터 넘겨받기.
-        Debug.Log("다이얼로그 UI를 찾았습니다.");
+        UpdateUI(); // 챕터 매니저에서 실행으로 변경 
     }
 
-    [SerializeField] private ChapterManager chapterManager;
+    [Tooltip("캐릭터 이름이 표시됩니다.")]
     [SerializeField] private TextMeshProUGUI nameTxt;
+    [Tooltip("대사 내용이 표시됩니다.")]
     [SerializeField] private TextMeshProUGUI lineTxt;
+    [Tooltip("클릭 시 다음 대사로 넘어갑니다.")]
     [SerializeField] private Button nextButton;
+    [Tooltip("클릭 시 이전 대사로 돌아갑니다.")]
     [SerializeField] private Button prevButton;
 
+    [Tooltip("선택지를 보여줄 패널입니다.")]
     [SerializeField] private GameObject optionUIPanel;
+    [Tooltip("선택지의 질문을 보여줍니다.")]
     [SerializeField] private TextMeshProUGUI questionTxt;
+    [Tooltip("선택지를 배열로 저장합니다.")]
     [SerializeField] private Button[] optionButtons;
 
-    private int currentDialogueIndex = 0;
-    private int currentLineIndex = 0;
+
+    private int currentDialogueIndex = 0; 
+    private int currentLineIndex = 0; 
 
     private void UpdateUI()
     {
@@ -43,69 +48,75 @@ public partial class DialogueUI : UIBase
 
         if (currentLineIndex < 0 || currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length)
         {
-            // 라인 인덱스가 덤위를 벗어갔을 때
+            // 라인 인덱스가 덤위를 벗어갔을 때 => 종료가 아니라 챕터 인덱스를 늘려줘야 됨 
             return;
         }
 
         Dialogue currentDialogue = ChapterManager.Instance.dialogues[currentDialogueIndex];
 
-        if (currentDialogue.isOption)
+        if (currentDialogue.isOption) // 선택지가 있는 대화일 경우 
         {
+            Debug.Log(currentDialogueIndex);
             ShowOption(currentDialogue);
         }
-        else
+        else // 일반 대화일 경우 
         {
             nameTxt.text = currentDialogue.name;
             lineTxt.text = currentDialogue.lines[currentLineIndex];
         }
-        //nameTxt.text = ChapterManager.Instance.dialogues[currentDialogueIndex].name;
-        //lineTxt.text = ChapterManager.Instance.dialogues[currentDialogueIndex].lines[currentLineIndex];
 
-        prevButton.interactable = (currentDialogueIndex > 0 || currentLineIndex > 0);
+        prevButton.interactable = (currentDialogueIndex > 0 || currentLineIndex > 0); // 첫번째 대화나 첫번째 라인이 아니면 활성화 
     }
     public void ShowNextLine()
     {
-        currentLineIndex++;
-
-        if (ChapterManager.Instance.dialogues[currentDialogueIndex].isOption)
-        {
-            ShowOption(ChapterManager.Instance.dialogues[currentDialogueIndex]);
-            return;
-        }
+        currentLineIndex++; 
 
         if (currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length)
         {
-            currentDialogueIndex++;
-            currentLineIndex = 0;
+            currentDialogueIndex++; 
+            currentLineIndex = 0;  
 
-            if (currentDialogueIndex >= ChapterManager.Instance.dialogues.Length)
+            if (currentDialogueIndex >= ChapterManager.Instance.dialogues.Length) 
             {
-                // 대화 종료 -> 안전하게 처리되게 대화 인덱스와 라인 인덱스 조절
                 currentDialogueIndex = ChapterManager.Instance.dialogues.Length - 1;
                 currentLineIndex = ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length - 1;
                 return;
             }
         }
 
-        UpdateUI();
+        UpdateUI(); 
     }
     private void ShowOption(Dialogue dialogue)
     {
-        // OptionPanel을 직접 표시하도록 변경
+        Debug.Log(currentDialogueIndex);
+
         var optionPanel = UIManager.Instance.Show<OptionPanel>();
-        if (optionPanel != null)
+        if (optionPanel != null) 
         {
-            optionPanel.SetupOptions(dialogue.Question, dialogue.Options, OnOptionSelected);
+            Debug.Log(currentDialogueIndex);
+            optionPanel.SetupOptions(dialogue.Question, dialogue.Options, OnOptionSelected); // 실행합니다 
+            // 인덱스 값만 보내주고 그쪽에서 다 해결 OnOptionSelected
         }
     }
-    private void OnOptionSelected(int resultIndex)
+    public void OnOptionSelected(int resultIndex)
     {
-        Debug.Log($"선택된 결과: {resultIndex}");
-        //currentDialogueIndex = resultIndex;
-        //currentLineIndex = 0;
+        // 만약 옵션의 0번을 눌렀다 0 =  D이거에 맞는 결과, 파라미터 인덱스 ==  
+        // 호감도에 따른 팝업 띄워줘야 해요 
+        // 옵션 판넬 끄고 호감도 팝업 띄워줬다가 코루틴 돌려서 3초 뒤에 삭제되기 
+
+        int nextDialogueID = ChapterManager.Instance.dialogues[currentDialogueIndex].Param[resultIndex];
+        if (nextDialogueID >= 0 && nextDialogueID < ChapterManager.Instance.dialogues.Length)
+        {
+            currentDialogueIndex = nextDialogueID;
+            currentLineIndex = 0; // 대화의 첫 번째 라인으로 이동
+        }
+        else
+        {
+            Debug.LogError($"잘못된 대화 ID: {nextDialogueID}");
+        }
+
         UpdateUI();
     }
-
     public void ShowPreviousLine()
     {
         if (currentLineIndex > 0)
@@ -124,7 +135,6 @@ public partial class DialogueUI : UIBase
 
         UpdateUI();
     }
-
     public void PopUpMenu(int Index)
     {
         switch (Index)

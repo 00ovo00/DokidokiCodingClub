@@ -212,19 +212,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1604543862159357497}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2888193565780636258}
-        m_TargetAssemblyTypeName: OptionPanel, Assembly-CSharp
-        m_MethodName: ShowMain
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &634144361386103397
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,19 +360,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5648430297093838436}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2888193565780636258}
-        m_TargetAssemblyTypeName: OptionPanel, Assembly-CSharp
-        m_MethodName: ShowMain
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1244068773640768428
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCCAB\uBC88\uC9F8 \uC635\uC158\uC785\uB2C8\uB2E4."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 792f95dd5edd63b4fab2fb10d6e0a752, type: 2}
   m_sharedMaterial: {fileID: 2029267831429084521, guid: 792f95dd5edd63b4fab2fb10d6e0a752, type: 2}
@@ -741,19 +717,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5374662756384756008}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2888193565780636258}
-        m_TargetAssemblyTypeName: OptionPanel, Assembly-CSharp
-        m_MethodName: ShowMain
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &5189266232413289329
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,7 +918,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB450\uBC88\uC9F8 \uC635\uC158\uC785\uB2C8\uB2E4."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 792f95dd5edd63b4fab2fb10d6e0a752, type: 2}
   m_sharedMaterial: {fileID: 2029267831429084521, guid: 792f95dd5edd63b4fab2fb10d6e0a752, type: 2}
@@ -1076,7 +1040,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   questionText: {fileID: 919805844033656707}
-  optionButtons: []
+  optionButtons:
+  - {fileID: 1180312984148174718}
+  - {fileID: 9211662297837590577}
+  - {fileID: 9203033356503733724}
 --- !u!1 &6986613098509857206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,7 +1109,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC138\uBC88\uC9F8 \uC635\uC158\uC785\uB2C8\uB2E4."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 792f95dd5edd63b4fab2fb10d6e0a752, type: 2}
   m_sharedMaterial: {fileID: 2029267831429084521, guid: 792f95dd5edd63b4fab2fb10d6e0a752, type: 2}

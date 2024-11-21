@@ -24,7 +24,7 @@ public class ChapterManager : SingletonBase<ChapterManager>
     public Action onExitChapter;
 
     public Dialogue[] dialogues;
- 
+
     private void Awake()
     {
         _currentChapterIndex = 0;

@@ -13,7 +13,7 @@ public class OptionPanel : UIBase
     {
         questionText.text = question;
 
-        for (int i = 0; i < optionButtons.Length; i++)
+        for (int i = 0; i < optionButtons.Length; i++) // 옵션에 있는 대사를 하나씩 넣어서 출력 
         {
             if (i < options.Length)
             {
