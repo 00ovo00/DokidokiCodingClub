@@ -13,8 +13,8 @@
         "Options": [],
         "Results": [],
         "Param": [1],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ "Office" ],
+        "CharImage": [ ]
       },
       {
         "ID": 1,
@@ -28,8 +28,8 @@
         "Options": [],
         "Results": [],
         "Param": [2],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [  ],
+        "CharImage": [ "tutor2_02" ]
       },
       {
         "ID": 2,
@@ -42,8 +42,8 @@
         "Options": [],
         "Results": [],
         "Param": [3],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ ],
+        "CharImage": [ ]
       },
       {
         "ID": 3,
@@ -102,7 +102,7 @@
         "Options": [],
         "Results": [],
         "Param": [],
-        "BGImage": [ "" ],
+        "BGImage": [],
         "CharImage": [ "player" ]
       }
     ]

@@ -30,8 +30,8 @@
         1,
         2
       ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ "Room" ],
+      "CharImage": [ ]
     },
     {
       "ID": 1,
@@ -46,8 +46,8 @@
       "Options": [],
       "Results": [],
       "Param": [6],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [  ],
+      "CharImage": [ "tutor2_01" ]
     },
     {
       "ID": 2,
@@ -65,8 +65,8 @@
       "Param": [
         3
       ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [  ],
+      "CharImage": [ ]
     },
     {
       "ID": 3,
@@ -90,8 +90,8 @@
         4,
         5
       ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [  ],
+      "CharImage": [ "tutor2_01" ]
     },
     {
       "ID": 4,
@@ -105,8 +105,8 @@
       "Options": [],
       "Results": [],
       "Param": [ 6 ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [],
+      "CharImage": [ ]
     },
     {
       "ID": 5,
@@ -122,8 +122,8 @@
       "Options": [],
       "Results": [],
       "Param": [ 6 ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ ],
+      "CharImage": [ ]
     },
     {
       "ID": 6,
@@ -140,8 +140,8 @@
       "Options": [],
       "Results": [],
       "Param": [],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ ],
+      "CharImage": [ "player" ]
     }
   ]
 }

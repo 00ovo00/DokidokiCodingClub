@@ -19,8 +19,8 @@
         "Options": [],
         "Results": [],
         "Param": [],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ "Room" ],
+        "CharImage": [ "manager2_01" ]
       },
       {
         "ID": 1,
@@ -36,8 +36,8 @@
         "Options": [],
         "Results": [],
         "Param": [],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ ],
+        "CharImage": [ "player" ]
       },
       {
         "ID": 2,
@@ -52,8 +52,8 @@
         "Options": [],
         "Results": [],
         "Param": [],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ ],
+        "CharImage": [ "player" ]
       }
     ]
 }

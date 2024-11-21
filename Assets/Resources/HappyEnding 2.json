@@ -14,8 +14,8 @@
         "Options": [],
         "Results": [],
         "Param": [1],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ "Office" ],
+        "CharImage": [ ]
 
       },
       {
@@ -30,8 +30,8 @@
         "Options": [],
         "Results": [],
         "Param": [2],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [  ],
+        "CharImage": [ "tutor1_02" ]
       },
       {
         "ID": 2,
@@ -44,8 +44,8 @@
         "Options": [],
         "Results": [],
         "Param": [3],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ ],
+        "CharImage": [ ]
       },
       {
         "ID": 3,
@@ -59,8 +59,8 @@
         "Options": [],
         "Results": [],
         "Param": [4],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ ],
+        "CharImage": [ ]
       },
       {
         "ID": 4,
@@ -74,8 +74,8 @@
         "Options": [],
         "Results": [],
         "Param": [5],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ ],
+        "CharImage": [ ]
       },
       {
         "ID": 5,
@@ -90,8 +90,8 @@
         "Options": [],
         "Results": [],
         "Param": [6],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ ],
+        "CharImage": [ ]
       },
       {
         "ID": 6,
@@ -105,8 +105,8 @@
         "Options": [],
         "Results": [],
         "Param": [],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [  ],
+        "CharImage": ["player" ]
       }
     ]
 }

@@ -30,8 +30,8 @@
         "Options": [],
         "Results": [],
         "Param": [2],
-        "BGImage": [ "tutor1_05" ],
-        "CharImage": []
+        "BGImage": ["None"],
+        "CharImage": [ "tutor1_05" ]
       },
       {
         "ID": 2,

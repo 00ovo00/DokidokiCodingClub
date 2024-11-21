@@ -40,8 +40,8 @@
       "Options": [],
       "Results": [],
       "Param": [2],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ "AnimalShelter" ],
+      "CharImage": [ "manager1_02" ]
     },
     {
       "ID": 2,
@@ -57,8 +57,8 @@
       "Options": [],
       "Results": [],
       "Param": [3],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ ],
+      "CharImage": []
     },
     {
       "ID": 3,
@@ -84,8 +84,8 @@
         5,
         6
       ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ "CityArea" ],
+      "CharImage": [ ]
     },
     {
       "ID": 4,
@@ -97,8 +97,8 @@
       "Options": [],
       "Results": [],
       "Param": [ 13 ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ ],
+      "CharImage": [ ]
     },
     {
       "ID": 5,
@@ -110,8 +110,8 @@
       "Options": [],
       "Results": [],
       "Param": [ 13 ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [],
+      "CharImage": [ ]
     },
     {
       "ID": 6,
@@ -123,8 +123,8 @@
       "Options": [],
       "Results": [],
       "Param": [ 13 ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ ],
+      "CharImage": []
     },
     {
       "ID": 7,
@@ -139,8 +139,8 @@
       "Options": [],
       "Results": [],
       "Param": [8],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ "WallPainting" ],
+      "CharImage": [ ]
     },
     {
       "ID": 8,
@@ -156,8 +156,8 @@
       "Options": [],
       "Results": [],
       "Param": [9],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ ],
+      "CharImage": [ "tutor1_04" ]
     },
     {
       "ID": 9,
@@ -183,8 +183,8 @@
         11,
         12
       ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ "CityArea" ],
+      "CharImage": [ "tutor1_01" ]
 
     },
     {
@@ -199,8 +199,8 @@
       "Options": [],
       "Results": [],
       "Param": [ 13 ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [],
+      "CharImage": [ ]
     },
     {
       "ID": 11,
@@ -213,8 +213,8 @@
       "Options": [],
       "Results": [],
       "Param": [ 13 ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [],
+      "CharImage": []
     },
     {
       "ID": 12,
@@ -226,8 +226,8 @@
       "Options": [],
       "Results": [],
       "Param": [ 13 ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [],
+      "CharImage": []
     },
     {
       "ID": 13,
@@ -240,8 +240,8 @@
       "Options": [],
       "Results": [],
       "Param": [],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ "GoBackToHome" ],
+      "CharImage": [ "player" ]
     }
 
   ]
