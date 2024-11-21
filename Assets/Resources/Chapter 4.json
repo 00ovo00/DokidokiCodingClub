@@ -23,8 +23,8 @@
         1,
         7
       ],
-      "BGImage": [ "" ],
-      "CharImage": [ "" ]
+      "BGImage": [ "Room" ],
+      "CharImage": [ ]
     },
 
     {

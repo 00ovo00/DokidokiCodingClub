@@ -29,8 +29,8 @@
           2,
           3
         ],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ "Room" ],
+        "CharImage": []
       },
       {
         "ID": 1,
@@ -43,8 +43,8 @@
         "Options": [],
         "Results": [],
         "Param": [ 4 ],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [ ],
+        "CharImage": [ "manager1_03" ]
       },
       {
         "ID": 2,
@@ -59,8 +59,8 @@
         "Options": [],
         "Results": [],
         "Param": [ 4 ],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [],
+        "CharImage": [ "tutor1_01" ]
       },
       {
         "ID": 3,
@@ -75,8 +75,8 @@
         "Options": [],
         "Results": [],
         "Param": [ 4 ],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [],
+        "CharImage": [ "manager2_01" ]
       },
       {
         "ID": 4,
@@ -92,8 +92,8 @@
         "Options": [],
         "Results": [],
         "Param": [],
-        "BGImage": [ "" ],
-        "CharImage": [ "" ]
+        "BGImage": [],
+        "CharImage": [ "player" ]
       }
 
     ]
