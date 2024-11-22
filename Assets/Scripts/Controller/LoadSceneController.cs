@@ -9,6 +9,7 @@ public class LoadSceneController : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(this.sceneName);
+        Debug.Log(sceneName);
     }
     public void LoadScene(string sceneName = "")
     {
