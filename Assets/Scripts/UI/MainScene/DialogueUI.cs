@@ -109,6 +109,7 @@ public partial class DialogueUI : UIBase
         }
 
         prevButton.interactable = (currentDialogueIndex > 0 || currentLineIndex > 0); // 첫번째 대화나 첫번째 라인이 아니면 활성화 
+
     }
     public void ShowNextLine()
     {
@@ -117,10 +118,21 @@ public partial class DialogueUI : UIBase
         if (currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length) // 현재 대화의 라인 인덱스를 초과했을 때
         {
             // 챕터 7에서 호감도에 따른 분기 처리
-            if (ChapterManager.Instance.CurrentChapterIndex == 6)
+            if (ChapterManager.Instance.CurrentChapterIndex == 6)//
             {
                 HandleChapter7();
+
                 return;
+            }
+            if(ChapterManager.Instance.CurrentChapterIndex == 7)
+            {
+                ChapterManager.Instance.dialogues = EndingManager.Instance.endingDialogues;
+                currentDialogueIndex = 0;
+                currentLineIndex = 0;
+                UpdateUI();
+                ChapterManager.Instance.ExitChapter();
+                return;
+
             }
 
             // 현재 대화가 선택지가 없고 다음으로 이어지는 대화가 있는 경우
@@ -133,6 +145,7 @@ public partial class DialogueUI : UIBase
             {
                 // 마지막 대화가 아닌 경우 다음 대화로 이동
                 currentDialogueIndex++;
+                ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
                 currentLineIndex = 0;
             }
             else
@@ -262,6 +275,8 @@ public partial class DialogueUI : UIBase
         var sortedAffectionLevels = affectionLevels.OrderByDescending(x => x.Value).ToList();
         Debug.Log(sortedAffectionLevels);
         string character = sortedAffectionLevels[0].Key;
+
+
          Debug.Log(character);
 
         if (affectionLevels[character] >= 50)
@@ -275,6 +290,8 @@ public partial class DialogueUI : UIBase
             currentDialogueIndex = 1;
         }
 
+        EndingManager.Instance.EnterEnding(character);
+        ChapterManager.Instance.ExitChapter();
         currentLineIndex = 0;
         UpdateUI();
     }
@@ -285,6 +302,6 @@ public partial class DialogueUI : UIBase
         var highestAffectionCharacter = affectionLevels.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
         EndingManager.Instance.EnterEnding(highestAffectionCharacter);
 
-        EndingManager.Instance.EnterEnding(highestAffectionCharacter);
+       
     }
 }
