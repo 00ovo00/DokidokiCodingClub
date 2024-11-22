@@ -25,23 +25,23 @@ public class AudioManager : SingletonBase<AudioManager>
     
     private void Start()
     {
-        // 초기 볼륨 설정
-        _bgmSource.volume = 0.5f;
-        _sfxSource.volume = 0.5f;
+        // 초기 볼륨 ?�정
+        _bgmSource.volume = 0.3f;
+        _sfxSource.volume = 0.3f;
         
-        // 시작시 BGM 바로 시작하게 하는 TestCode
-        // TODO: 시작 화면에서 플레이하도록 수정
+        // ?�작??BGM 바로 ?�작?�게 ?�는 TestCode
+        // TODO: ?�작 ?�면?�서 ?�레?�하?�록 ?�정
         PlayBGM(bgmClip);
     }
     
     private void SetAudioSource()
     {
-        // AudioManager의 자식으로 AudioSource 컴포넌트 가진 @BGM 생성
+        // AudioManager???�식?�로 AudioSource 컴포?�트 가�?@BGM ?�성
         _bgmObj = new GameObject("@BGM");
         _bgmObj.transform.parent = transform;
         _bgmSource = _bgmObj.AddComponent<AudioSource>();
         
-        // AudioManager의 자식으로 AudioSource 컴포넌트 가진 @SFX 생성
+        // AudioManager???�식?�로 AudioSource 컴포?�트 가�?@SFX ?�성
         _sfxObj = new GameObject("@SFX");
         _sfxObj.transform.parent = transform;
         _sfxSource = _sfxObj.AddComponent<AudioSource>();
@@ -49,8 +49,8 @@ public class AudioManager : SingletonBase<AudioManager>
 
     private void SetAudioClip()
     {
-        // Resource 폴더에서 각 AudioClip에 맞는 파일 로드
-        bgmClip = ResourceLoad<AudioClip>("Audios/BGM_Clip");
+        // Resource ?�더?�서 �?AudioClip??맞는 ?�일 로드
+        bgmClip = ResourceLoad<AudioClip>("Audios/BGM");
         clickSfx = ResourceLoad<AudioClip>("Audios/SFX_ButtonClick");
     }
 
@@ -69,7 +69,7 @@ public class AudioManager : SingletonBase<AudioManager>
         _sfxSource.PlayOneShot(clip);
     }
     
-    // 리소스 폴더에서 필요한 오브젝트 가져오는 메소드
+    // 리소???�더?�서 ?�요???�브?�트 가?�오??메소??
     public T ResourceLoad<T>(string path) where T : Object
     {
         T instance = Resources.Load<T>(path);
@@ -83,7 +83,7 @@ public class AudioManager : SingletonBase<AudioManager>
     public void PlayStartBGM() => PlayBGM(bgmClip);
     public void PlayClickSFX() => PlaySFX(clickSfx);
     
-    // 볼륨 조절 설정창 있는 경우에 사용
+    // 볼륨 조절 ?�정�??�는 경우???�용
     public float GetBGMVolume() => _bgmSource.volume;
     public void SetBGMVolume(float volume) => _bgmSource.volume = volume;
     public float GetSFXVolume() => _sfxSource.volume;
