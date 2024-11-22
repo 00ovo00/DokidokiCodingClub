@@ -1,0 +1,133 @@
+{
+    "dialogues": [
+      {
+        "ID": 0,
+        "name": "플레이어",
+        "lines": [
+          "오늘은 객체 지향 프로그래밍 특강이 있는 날이다.",
+          "음, 매우 유익하군.",
+          "졸음과 싸우며 특강을 열심히 듣는다.."
+        ],
+        "isOption": false,
+
+        "Options": [],
+        "Target": [],
+        "Results": [],
+        "Param": [ 1 ],
+        "BGImage": [ "Room" ],
+        "CharImage": []
+
+      },
+      {
+        "ID": 1,
+        "name": "이성언 튜터",
+        "lines": [
+          "... 자 그럼 여기서 퀴즈를 내보겠습니다!",
+          "객체지향 프로그래밍에선 [A]를 낮추고 [B]를 높여야 합니다.",
+          "여기서 [A]와 [B]에 들어갈 말로 알맞는 것을 차례대로 말씀해주세요"
+        ],
+        "isOption": false,
+
+        "Options": [],
+        "Target": [],
+        "Results": [],
+        "Param": [ 2 ],
+        "BGImage": [ "None" ],
+        "CharImage": [ "tutor1_05" ]
+      },
+      {
+        "ID": 2,
+        "name": "플레이어",
+        "lines": [
+          "퀴즈다! 중간중간 졸아서 자신 없는데 으으",
+          "나의 답은..."
+        ],
+        "isOption": true,
+
+        "Options": [
+          "결합도, 응집도",
+          "응집도, 결합도",
+          "모르겠다, 그냥 찍어!",
+          "묵언수행을 한다"
+        ],
+        "Target": [ "이성언 튜터", "이성언 튜터", "이성언 튜터", "이성언 튜터" ],
+        "Results": [
+          10,
+          -5,
+          -5,
+          -10
+        ],
+        "Param": [
+          3,
+          4,
+          5,
+          4
+        ],
+        "BGImage": [ "Room" ],
+        "CharImage": []
+      },
+
+      {
+        "ID": 3,
+        "name": "이성언 튜터",
+        "lines": [
+          "정답입니다! 공부를 열심히 하셨군요. 성실한 모습이 보기 좋습니다."
+        ],
+        "isOption": false,
+
+        "Options": [],
+        "Target": [],
+        "Results": [],
+        "Param": [ 6 ],
+        "BGImage": [],
+        "CharImage": [ "tutor1_01" ]
+      },
+      {
+        "ID": 4,
+        "name": "이성언 튜터",
+        "lines": [
+          "정답은 결합도, 응집도 입니다. 공부를 더 열심히 해봅시다."
+        ],
+        "isOption": false,
+
+        "Options": [],
+        "Target": [],
+        "Results": [],
+        "Param": [ 6 ],
+        "BGImage": [],
+        "CharImage": [ "tutor1_01" ]
+      },
+      {
+        "ID": 5,
+        "name": "이성언 튜터",
+        "lines": [
+          "뭔가 아무렇게나 찍은 느낌인데, 아니겠지요?"
+        ],
+        "isOption": false,
+
+        "Options": [],
+        "Target": [],
+        "Results": [],
+        "Param": [ 6 ],
+        "BGImage": [],
+        "CharImage": [ "tutor1_01" ]
+      },
+      {
+        "ID": 6,
+        "name": "플레이어",
+        "lines": [
+          "어느 새 특강이 끝나고 저녁식사 시간이 다가왔다.",
+          "오늘 배운 내용이 머릿 속에서 사라지기 전에 블로그를 켜고 TIL을 작성했다."
+        ],
+        "isOption": false,
+
+        "Options": [],
+        "Target": [],
+        "Results": [],
+        "Param": [],
+        "BGImage": [],
+        "CharImage": [ "player" ]
+      }
+
+    ]
+}
