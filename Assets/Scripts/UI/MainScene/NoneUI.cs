@@ -175,6 +175,4 @@ public class NoneUI : UIBase
         //StartCoroutine(FadeBackGround(idx)); // 추가: 다이얼로그 인덱스에 따라 배경 이미지 페이드 아웃/인
         //StartCoroutine(FadeCharacter(idx)); // 추가: 다이얼로그 인덱스에 따라 캐릭터 이미지 페이드 아웃/인
     }
-
-  
 }
