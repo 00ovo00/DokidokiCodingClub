@@ -22,6 +22,7 @@
         "튜터님 한테 간다",
         "스스로 고쳐본다"
       ],
+      "Target": [ "김재경 튜터", "김재경 튜터" ],
       "Results": [
         20,
         -10
@@ -31,7 +32,7 @@
         2
       ],
       "BGImage": [ "Room" ],
-      "CharImage": [ ]
+      "CharImage": []
     },
     {
       "ID": 1,
@@ -44,9 +45,10 @@
       "isOption": false,
       "Question": "",
       "Options": [],
+      "Target": [],
       "Results": [],
-      "Param": [6],
-      "BGImage": [  ],
+      "Param": [ 6 ],
+      "BGImage": [],
       "CharImage": [ "tutor2_01" ]
     },
     {
@@ -60,13 +62,14 @@
       ],
       "isOption": false,
       "Question": "",
+      "Target": [],
       "Options": [],
       "Results": [],
       "Param": [
         3
       ],
-      "BGImage": [  ],
-      "CharImage": [ ]
+      "BGImage": [],
+      "CharImage": []
     },
     {
       "ID": 3,
@@ -82,6 +85,7 @@
         "아니..그게 아니라..",
         "죄송합니다부터 한다."
       ],
+      "Target": [ "김재경 튜터", "김재경 튜터" ],
       "Results": [
         -15,
         5
@@ -90,7 +94,7 @@
         4,
         5
       ],
-      "BGImage": [  ],
+      "BGImage": [],
       "CharImage": [ "tutor2_01" ]
     },
     {
@@ -103,10 +107,11 @@
       ],
       "isOption": false,
       "Options": [],
+      "Target": [],
       "Results": [],
       "Param": [ 6 ],
       "BGImage": [],
-      "CharImage": [ ]
+      "CharImage": []
     },
     {
       "ID": 5,
@@ -120,10 +125,11 @@
       ],
       "isOption": false,
       "Options": [],
+      "Target": [],
       "Results": [],
       "Param": [ 6 ],
-      "BGImage": [ ],
-      "CharImage": [ ]
+      "BGImage": [],
+      "CharImage": []
     },
     {
       "ID": 6,
@@ -138,9 +144,10 @@
       "isOption": false,
       "Question": "",
       "Options": [],
+      "Target": [],
       "Results": [],
       "Param": [],
-      "BGImage": [ ],
+      "BGImage": [],
       "CharImage": [ "player" ]
     }
   ]
