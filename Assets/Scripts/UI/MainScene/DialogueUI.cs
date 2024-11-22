@@ -78,7 +78,6 @@ public partial class DialogueUI : UIBase
         if (currentDialogue.lines.Length - 1 > currentLineIndex)
         {
             nameTxt.text = currentDialogue.name;
-            //lineTxt.text = currentDialogue.lines[currentLineIndex];
             if (typingCoroutine != null)
             {
                 StopCoroutine(typingCoroutine);
@@ -198,12 +197,7 @@ public partial class DialogueUI : UIBase
             resultPopup.SetUpResults(resultID);
         }
 
-
-        //int resultID = ChapterManager.Instance.dialogues[currentDialogueIndex].Results[resultIndex];
-
         UIManager.Instance.Hide<OptionPanel>();
-        //var resultPopup = UIManager.Instance.Show<Popup004>();
-       // resultPopup.SetUpResults(resultID);
 
         if (nextDialogueID >= 0 && nextDialogueID < ChapterManager.Instance.dialogues.Length)
         {

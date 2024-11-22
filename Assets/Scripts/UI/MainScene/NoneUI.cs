@@ -23,7 +23,6 @@ public class NoneUI : UIBase
         ChapterManager.Instance.onFadeEffect += OnChangeBackground;
         ChapterManager.Instance.onFadeEffect?.Invoke();
 
-        Debug.Log("백그라운드 UI가 호출되었습니다.");
         MainScene.Instance.OnStateChanged += HandleStateChange;
         StartCoroutine(ChangeStateToDefaultAfterDelay());
 
@@ -47,7 +46,7 @@ public class NoneUI : UIBase
     {
         if (dialogueIndex == 0)
         {
-            
+
             // 챕터가 시작할 때는 배경 페이드 인
             ChangeBackGroundImage(dialogueIndex);
             yield return fadeController.FadeIn(backgroundGroup, fadeDuration);
@@ -133,7 +132,7 @@ public class NoneUI : UIBase
             if (characterImageName == "player")
             {
                 // 캐릭터 이미지가 "player"인 경우, 아무것도 하지 않음
-                characterImage.gameObject.SetActive (false);
+                characterImage.gameObject.SetActive(false);
                 currentCharacterImageName = "player";
                 Debug.Log("캐릭터 이미지가 'player'이므로 이미지가 비워집니다.");
             }
@@ -172,9 +171,5 @@ public class NoneUI : UIBase
         Debug.Log($"changeart 발사!: {idx}");
         ChangeBackGroundImage(idx);
         ChangeCharacterImage(idx);
-        //StartCoroutine(FadeBackGround(idx)); // 추가: 다이얼로그 인덱스에 따라 배경 이미지 페이드 아웃/인
-        //StartCoroutine(FadeCharacter(idx)); // 추가: 다이얼로그 인덱스에 따라 캐릭터 이미지 페이드 아웃/인
     }
-
-  
 }

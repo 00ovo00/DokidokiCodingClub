@@ -20,7 +20,6 @@ public class MainScene : SingletonBase<MainScene>
     private void Start()
     {
         SetState(UIState.None);
-        Debug.Log("최초 상태를 설정합니다.");
     }
 
     public void SetState(UIState newState)
@@ -32,7 +31,6 @@ public class MainScene : SingletonBase<MainScene>
         OnStateChanged?.Invoke(newState); 
 
         HandleStateChange(newState);
-        Debug.Log($"{newState}상태로 전환합니다.");
     }
 
     private void HandleStateChange(UIState state)
