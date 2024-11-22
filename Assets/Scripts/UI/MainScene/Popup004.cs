@@ -8,7 +8,7 @@ public class Popup004 : UIBase
     public void SetUpResults(int result)
     {
         results.text = ($"호감도 {result}!");
-        StartCoroutine(HidePopupAfterDelay(2f));
+        StartCoroutine(HidePopupAfterDelay(1f));
     }
 
     private IEnumerator HidePopupAfterDelay(float delay)
