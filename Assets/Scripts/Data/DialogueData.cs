@@ -7,6 +7,7 @@ public class Dialogue
     public bool isOption;
     public string Question;
     public string[] Options;
+    public string[] Target;
     public int[] Results;
     public int[] Param;
     public string[] BGImage;

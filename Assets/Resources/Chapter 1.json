@@ -11,11 +11,11 @@
 
         ],
         "isOption": false,
-       
         "Options": [],
+        "Target": [],
         "Results": [],
-        "Param": [1],
-        "BGImage": ["Room"],
+        "Param": [ 1 ],
+        "BGImage": [ "Room" ],
         "CharImage": []
       },
       {
@@ -27,10 +27,10 @@
           "오늘 첫 만남인데, 혹시 괜찮으시다면 마이크와 캠을 켜주시면 감사하겠습니다."
         ],
         "isOption": false,
-
         "Options": [],
+        "Target": [],
         "Results": [],
-        "Param": [2],
+        "Param": [ 2 ],
         "BGImage": [],
         "CharImage": [ "manager1_01" ]
       },
@@ -42,12 +42,12 @@
           "나는 마이크와 캠을.."
         ],
         "isOption": true,
-
         "Options": [
           "마이크와 캠 둘다 킨다.",
           "마이크만 킨다.",
           "너무 부끄러워! 그냥 가만히 있는다."
         ],
+        "Target": [ "안혜린 매니저", "안혜린 매니저", "안혜린 매니저" ],
         "Results": [
           5,
           0,
@@ -68,10 +68,10 @@
           "감사합니다.오늘 하루 파이팅해봅시다!"
         ],
         "isOption": false,
-
         "Options": [],
+        "Target": [],
         "Results": [],
-        "Param": [6],
+        "Param": [ 6 ],
         "BGImage": [],
         "CharImage": []
       },
@@ -84,6 +84,7 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [ 6 ],
         "BGImage": [],
@@ -98,6 +99,7 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [ 6 ],
         "BGImage": [],
@@ -113,6 +115,7 @@
         ],
         "isOption": false,
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [],
         "BGImage": [],

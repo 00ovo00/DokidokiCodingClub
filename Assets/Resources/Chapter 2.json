@@ -19,6 +19,7 @@
           "개발에 자신이 없어서 그러나? 도움을 줄 사람을 찾는다.",
           "전투 민족의 피가 끓는다... 지금 바로 키배를 신청한다!"
         ],
+        "Target": [ "안혜린 매니저", "이성언 튜터", "All" ],
         "Results": [
           10,
           0,
@@ -41,9 +42,10 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [ 4 ],
-        "BGImage": [ ],
+        "BGImage": [],
         "CharImage": [ "manager1_03" ]
       },
       {
@@ -57,6 +59,7 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [ 4 ],
         "BGImage": [],
@@ -73,6 +76,7 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [ 4 ],
         "BGImage": [],
@@ -90,6 +94,7 @@
         "isOption": false,
 
         "Options": [],
+        "Target": [],
         "Results": [],
         "Param": [],
         "BGImage": [],

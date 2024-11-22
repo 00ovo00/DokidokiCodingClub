@@ -13,7 +13,8 @@ public class ChapterManager : SingletonBase<ChapterManager>
         봉사,
         일상,
         최종프로젝트,
-        수료일
+        수료일,
+        엔딩
     }
 
     [SerializeField] private ChapterState _currentChapter;
@@ -33,9 +34,14 @@ public class ChapterManager : SingletonBase<ChapterManager>
         _currentChapterIndex = 0;
         EnterChapter(_currentChapterIndex);
     }
+    public int CurrentChapterIndex // 다른 클래스에서 읽기 전용으로 접근 가능
+    {
+        get { return _currentChapterIndex; }
+    }
 
     private void EnterChapter(int chapterIndex)
     {
+        if (chapterIndex > 6) { return; }
         string fileName = $"Chapter {chapterIndex + 1}";
         _currentChapter = (ChapterState)chapterIndex;
         DialogueData dialogueData = DataManager.Instance.Parse(fileName); 
