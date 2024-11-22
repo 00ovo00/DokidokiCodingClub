@@ -27,6 +27,7 @@ public partial class DialogueUI : UIBase
         affectionLevels["이성언 튜터"] = 30;
         affectionLevels["김재경 튜터"] = 30;
 
+        ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
         UpdateUI();
     }
 
@@ -121,7 +122,7 @@ public partial class DialogueUI : UIBase
             if (ChapterManager.Instance.CurrentChapterIndex == 6)//
             {
                 HandleChapter7();
-
+                ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
                 return;
             }
             if(ChapterManager.Instance.CurrentChapterIndex == 7)
@@ -129,7 +130,9 @@ public partial class DialogueUI : UIBase
                 ChapterManager.Instance.dialogues = EndingManager.Instance.endingDialogues;
                 currentDialogueIndex = 0;
                 currentLineIndex = 0;
+                ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
                 UpdateUI();
+
                 ChapterManager.Instance.ExitChapter();
                 return;
 
@@ -139,6 +142,7 @@ public partial class DialogueUI : UIBase
             if (!ChapterManager.Instance.dialogues[currentDialogueIndex].isOption && ChapterManager.Instance.dialogues[currentDialogueIndex].Param.Length > 0)
             {
                 currentDialogueIndex = ChapterManager.Instance.dialogues[currentDialogueIndex].Param[0];
+                ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
                 currentLineIndex = 0;
             }
             else if (currentDialogueIndex < ChapterManager.Instance.dialogues.Length - 1)
@@ -154,6 +158,7 @@ public partial class DialogueUI : UIBase
                 currentDialogueIndex = 0;
                 currentLineIndex = 0;
                 ChapterManager.Instance.ExitChapter();
+                ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
                 return;
             }
         }
@@ -200,7 +205,17 @@ public partial class DialogueUI : UIBase
         {
             string resultName = ChapterManager.Instance.dialogues[currentDialogueIndex].Target[resultIndex];  // 호감작 인물 이름
             int resultID = ChapterManager.Instance.dialogues[currentDialogueIndex].Results[resultIndex]; //호감도 수치
-            affectionLevels[resultName] += resultID; // 수치 반영
+            if (resultName == "All")
+            {
+                foreach (var key in affectionLevels.Keys.ToList())
+                {
+                    affectionLevels[key] += resultID;
+                }
+            }
+            else
+            {
+                affectionLevels[resultName] += resultID; // 수치 반영
+            }
 
             var resultPopup = UIManager.Instance.Show<Popup004>();
             resultPopup.SetUpResults(resultID);
@@ -216,7 +231,8 @@ public partial class DialogueUI : UIBase
         if (nextDialogueID >= 0 && nextDialogueID < ChapterManager.Instance.dialogues.Length)
         {
             currentDialogueIndex = nextDialogueID;
-            currentLineIndex = 0; 
+            currentLineIndex = 0;
+            ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
         }
         else
         {

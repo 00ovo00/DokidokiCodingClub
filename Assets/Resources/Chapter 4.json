@@ -58,7 +58,7 @@
       "Results": [],
       "Param": [ 3 ],
       "BGImage": [ "AnimalShelter" ],
-      "CharImage": [ "manager1_02" ]
+      "CharImage": [ ]
     },
     {
       "ID": 3,
@@ -76,7 +76,7 @@
       "Results": [],
       "Param": [ 4 ],
       "BGImage": [],
-      "CharImage": []
+      "CharImage": [ "manager1_02" ]
     },
     {
       "ID": 4,
