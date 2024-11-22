@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  backgroundGroup: {fileID: 0}
-  characterGroup: {fileID: 0}
+  backgroundGroup: {fileID: 4324409578246096907}
+  characterGroup: {fileID: 4324409578246096907}
   fadeDuration: 1
   backgroundImage: {fileID: 4324409578246096907}
   characterImage: {fileID: 3341602062622948007}
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78fcf0cf20c05144997e2e1ff5bf97ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 28de8a22285044345a3cf326ee65e1df, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78fcf0cf20c05144997e2e1ff5bf97ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 28de8a22285044345a3cf326ee65e1df, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

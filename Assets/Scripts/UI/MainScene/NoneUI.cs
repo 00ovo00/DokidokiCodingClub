@@ -47,6 +47,7 @@ public class NoneUI : UIBase
     {
         if (dialogueIndex == 0)
         {
+            
             // 챕터가 시작할 때는 배경 페이드 인
             ChangeBackGroundImage(dialogueIndex);
             yield return fadeController.FadeIn(backgroundGroup, fadeDuration);
@@ -110,7 +111,7 @@ public class NoneUI : UIBase
         if (ChapterManager.Instance.dialogues[dialogueIndex].BGImage != null && ChapterManager.Instance.dialogues[dialogueIndex].BGImage.Length > 0)
         {
             string backgroundImageName = ChapterManager.Instance.dialogues[dialogueIndex].BGImage[0];
-            Sprite newBackground = Resources.Load<Sprite>($"Images/Backgrounds/{backgroundImageName}");
+            Sprite newBackground = Resources.Load<Sprite>($"Images/Background/{backgroundImageName}");
             if (newBackground != null)
             {
                 backgroundImage.sprite = newBackground;
@@ -132,15 +133,16 @@ public class NoneUI : UIBase
             if (characterImageName == "player")
             {
                 // 캐릭터 이미지가 "player"인 경우, 아무것도 하지 않음
-                characterImage.sprite = null;
+                characterImage.gameObject.SetActive (false);
                 currentCharacterImageName = "player";
                 Debug.Log("캐릭터 이미지가 'player'이므로 이미지가 비워집니다.");
             }
             else
             {
-                Sprite newCharacter = Resources.Load<Sprite>($"Images/Characters/{characterImageName}");
+                Sprite newCharacter = Resources.Load<Sprite>($"Images/Character/{characterImageName}");
                 if (newCharacter != null)
                 {
+                    characterImage.gameObject.SetActive(true);
                     characterImage.sprite = newCharacter;
                     currentCharacterImageName = characterImageName;
                     Debug.Log($"캐릭터 이미지가 {characterImageName}으로 전환되었습니다.");
@@ -167,9 +169,11 @@ public class NoneUI : UIBase
 
     public void ChangeArt(int idx)
     {
-        Debug.Log(idx);
-        StartCoroutine(FadeBackGround(idx)); // 추가: 다이얼로그 인덱스에 따라 배경 이미지 페이드 아웃/인
-        StartCoroutine(FadeCharacter(idx)); // 추가: 다이얼로그 인덱스에 따라 캐릭터 이미지 페이드 아웃/인
+        Debug.Log($"changeart 발사!: {idx}");
+        ChangeBackGroundImage(idx);
+        ChangeCharacterImage(idx);
+        //StartCoroutine(FadeBackGround(idx)); // 추가: 다이얼로그 인덱스에 따라 배경 이미지 페이드 아웃/인
+        //StartCoroutine(FadeCharacter(idx)); // 추가: 다이얼로그 인덱스에 따라 캐릭터 이미지 페이드 아웃/인
     }
 
   
