@@ -11,8 +11,7 @@ public class MainScene : SingletonBase<MainScene>
         Null,
         None,
         Default,
-        Option,
-        Result
+        End
     }
 
     private UIState currentState;
@@ -46,16 +45,13 @@ public class MainScene : SingletonBase<MainScene>
         {
             case UIState.None:
                 UIManager.Instance.Show<NoneUI>();
-                Debug.Log("None 상태입니다.");
                 break;
             case UIState.Default:
                 UIManager.Instance.Show<DialogueUI>();
                 break;
-            case UIState.Option:
-                UIManager.Instance.Show<OptionUI>();
-                break;
-            case UIState.Result:
-                UIManager.Instance.Show<ResultUI>(); 
+            case UIState.End:
+                UIManager.Instance.Show<GameOverEnd>();
+                UIManager.Instance.Hide<NoneUI>();
                 break;
         }
     }
