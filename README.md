@@ -38,6 +38,10 @@
 
 ## 프로젝트 파일 구조
 
+![ClassDiagram1](https://github.com/user-attachments/assets/56af4515-e718-4335-a43c-dffc44335f24)
+
+
+
 
 
 
