@@ -2,13 +2,14 @@
 using System;
 using static MainScene;
 using System.Collections;
+using UnityEngine.UI;
 
 
 
 public class NoneUI : UIBase
 {
-    [SerializeField] private CanvasGroup backgroundGroup;
-    [SerializeField] private CanvasGroup characterGroup;
+    [SerializeField] private Image backgroundGroup;
+    [SerializeField] private Image characterGroup;
 
     [SerializeField] private float fadeDuration = 1f;
 
@@ -22,6 +23,7 @@ public class NoneUI : UIBase
         ChapterManager.Instance.onFadeEffect += OnChangeBackground;
         ChapterManager.Instance.onFadeEffect?.Invoke();
 
+
         Debug.Log("백그라운드 UI가 호출되었습니다.");
         MainScene.Instance.OnStateChanged += HandleStateChange;
         StartCoroutine(ChangeStateToDefaultAfterDelay());
@@ -30,7 +32,7 @@ public class NoneUI : UIBase
 
     private void OnChangeBackground()
     {
-
+        StartCoroutine(FadeBackGround());
     }
 
     public IEnumerator FadeBackGround()

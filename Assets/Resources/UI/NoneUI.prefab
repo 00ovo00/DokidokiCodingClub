@@ -126,6 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  backgroundGroup: {fileID: 4324409578246096907}
+  characterGroup: {fileID: 0}
+  fadeDuration: 1
 --- !u!1 &7105546222810101449
 GameObject:
   m_ObjectHideFlags: 0

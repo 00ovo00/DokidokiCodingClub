@@ -46,7 +46,6 @@ public class MainScene : SingletonBase<MainScene>
         {
             case UIState.None:
                 UIManager.Instance.Show<NoneUI>();
-                //ChapterManager.Instance.onFadeEffect += UIManager.Instance.Show<NoneUI>().OnChangeBackground;
                 Debug.Log("None 상태입니다.");
                 break;
             case UIState.Default:

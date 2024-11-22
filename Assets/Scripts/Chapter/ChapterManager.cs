@@ -36,6 +36,7 @@ public class ChapterManager : SingletonBase<ChapterManager>
 
     private void EnterChapter(int chapterIndex)
     {
+        onFadeEffect?.Invoke();
         string fileName = $"Chapter {chapterIndex + 1}";
         _currentChapter = (ChapterState)chapterIndex;
         DialogueData dialogueData = DataManager.Instance.Parse(fileName); 

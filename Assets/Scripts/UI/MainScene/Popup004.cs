@@ -14,6 +14,6 @@ public class Popup004 : UIBase
     private IEnumerator HidePopupAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay); 
-        UIManager.Instance.Hide<Popup004>();    
+        UIManager.Instance.Hide<Popup004>();
     }
 }
