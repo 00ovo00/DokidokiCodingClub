@@ -11,6 +11,7 @@ public partial class DialogueUI : UIBase
 {
     // 캐릭터별 호감도 관리 딕셔너리
     private Dictionary<string, int> affectionLevels = new Dictionary<string, int>();
+    public static bool isBadending = false;
 
     // 대화창 호출 
     private void Start()
@@ -89,7 +90,6 @@ public partial class DialogueUI : UIBase
             if (currentDialogue.isOption) // 선택지가 있는 대화일 경우 
             {
                 nameTxt.text = currentDialogue.name;
-                //lineTxt.text = currentDialogue.lines[currentLineIndex];
                 if (typingCoroutine != null)
                 {
                     StopCoroutine(typingCoroutine);
@@ -100,7 +100,6 @@ public partial class DialogueUI : UIBase
             else // 일반 대화일 경우 
             {
                 nameTxt.text = currentDialogue.name;
-                //lineTxt.text = currentDialogue.lines[currentLineIndex];
                 if (typingCoroutine != null)
                 {
                     StopCoroutine(typingCoroutine);
@@ -135,7 +134,6 @@ public partial class DialogueUI : UIBase
 
                 ChapterManager.Instance.ExitChapter();
                 return;
-
             }
 
             // 현재 대화가 선택지가 없고 다음으로 이어지는 대화가 있는 경우
@@ -162,33 +160,12 @@ public partial class DialogueUI : UIBase
                 return;
             }
         }
-        //if (currentLineIndex >= ChapterManager.Instance.dialogues[currentDialogueIndex].lines.Length) // 대사 인덱스가 있다면 
-        //{
-        //    if (ChapterManager.Instance.dialogues[currentDialogueIndex].isOption == false && ChapterManager.Instance.dialogues[currentDialogueIndex].Param.Length > 0)
-        //    {
-        //        currentDialogueIndex = ChapterManager.Instance.dialogues[currentDialogueIndex].Param[0];
-        //        //ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
-        //        currentLineIndex = 0;
-        //    }
-
-        //    if (currentDialogueIndex >= ChapterManager.Instance.dialogues.Length - 1)
-        //    {
-        //        currentDialogueIndex = 0;
-        //        currentLineIndex = 0;
-        //        ChapterManager.Instance.ExitChapter();
-        //        return;
-        //    }
-        //}
 
         UpdateUI(); 
     }
     private void ShowOption(Dialogue dialogue)
 
     {
-        //currentDialogueIndex++;
-        //ChapterManager.Instance.ChangeArt?.Invoke(currentDialogueIndex);
-        Debug.Log(currentDialogueIndex);
-
         var optionPanel = UIManager.Instance.Show<OptionPanel>();
         if (optionPanel != null) 
         {
@@ -292,18 +269,16 @@ public partial class DialogueUI : UIBase
         Debug.Log(sortedAffectionLevels);
         string character = sortedAffectionLevels[0].Key;
 
-
          Debug.Log(character);
 
         if (affectionLevels[character] >= 50)
         {
             currentDialogueIndex = 2;
-           
-            
         }
         else
         {
             currentDialogueIndex = 1;
+            isBadending = true;    
         }
 
         EndingManager.Instance.EnterEnding(character);

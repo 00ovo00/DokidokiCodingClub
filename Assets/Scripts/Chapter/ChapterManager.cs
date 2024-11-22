@@ -24,8 +24,8 @@ public class ChapterManager : SingletonBase<ChapterManager>
     public Action onCurrentChapter;
     public Action onExitChapter;
 
-    public Action onFadeEffect; // 호출되면 사용
-    public Action<int> ChangeArt; //
+    public Action onFadeEffect; 
+    public Action<int> ChangeArt; 
 
     public Dialogue[] dialogues;
 
@@ -34,17 +34,26 @@ public class ChapterManager : SingletonBase<ChapterManager>
         _currentChapterIndex = 0;
         EnterChapter(_currentChapterIndex);
     }
+
     public int CurrentChapterIndex // 다른 클래스에서 읽기 전용으로 접근 가능
     {
         get { return _currentChapterIndex; }
+       
     }
 
     private void EnterChapter(int chapterIndex)
     {
+
+        if (chapterIndex > 8 || (chapterIndex > 7 && DialogueUI.isBadending == true))
+        {
+            
+            MainScene.Instance.SetState(MainScene.UIState.End);
+        }
+
         if (chapterIndex > 6) { return; }
         string fileName = $"Chapter {chapterIndex + 1}";
         _currentChapter = (ChapterState)chapterIndex;
-        DialogueData dialogueData = DataManager.Instance.Parse(fileName); 
+        DialogueData dialogueData = DataManager.Instance.Parse(fileName);
 
         if (dialogueData != null && dialogueData.dialogues != null && dialogueData.dialogues.Length > 0)
         {
@@ -57,12 +66,10 @@ public class ChapterManager : SingletonBase<ChapterManager>
 
         onEnterChapter?.Invoke();
     }
-    //private void CurrentChapter()
-    //{
-    //    onCurrentChapter?.Invoke();
-    //}
+
     public void ExitChapter()
     {
+        onFadeEffect?.Invoke();
         onExitChapter?.Invoke();
         _currentChapterIndex++;
         EnterChapter(_currentChapterIndex);
@@ -71,10 +78,8 @@ public class ChapterManager : SingletonBase<ChapterManager>
         {
             return;
         }
+}
 
-
-    }
-    
     public void OnDialogueIndexChanged(int newDialogueIndex)
     {
         ChangeArt?.Invoke(newDialogueIndex);

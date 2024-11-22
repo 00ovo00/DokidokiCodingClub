@@ -1330,6 +1330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3871736297922146591}
   - component: {fileID: 6586997349951470102}
+  - component: {fileID: 232968980631354324}
   m_Layer: 5
   m_Name: GameOverEnd
   m_TagString: Untagged
@@ -1376,6 +1377,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7642496731965014984}
   m_CullTransparentMesh: 1
+--- !u!114 &232968980631354324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642496731965014984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdfdb8185c83a048bdc0bd7221658cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
 --- !u!1 &7858579129901880294
 GameObject:
   m_ObjectHideFlags: 0
