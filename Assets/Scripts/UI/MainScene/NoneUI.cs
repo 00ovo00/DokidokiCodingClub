@@ -47,7 +47,6 @@ public class NoneUI : UIBase
     {
         if (dialogueIndex == 0)
         {
-            ;
             // 챕터가 시작할 때는 배경 페이드 인
             ChangeBackGroundImage(dialogueIndex);
             yield return fadeController.FadeIn(backgroundGroup, fadeDuration);
