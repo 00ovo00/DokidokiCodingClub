@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class NoneUI : UIBase
 {
-    [SerializeField] private CanvasGroup backgroundGroup;
-    [SerializeField] private CanvasGroup characterGroup;
+    [SerializeField] private Image backgroundGroup;
+    [SerializeField] private Image characterGroup;
     [SerializeField] private float fadeDuration = 1f;
     [SerializeField] private Image backgroundImage; // 추가: 배경 이미지를 표시할 UI Image
     [SerializeField] private Image characterImage; // 추가: 캐릭터 이미지를 표시할 UI Image
